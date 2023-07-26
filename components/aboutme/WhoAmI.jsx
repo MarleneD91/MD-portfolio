@@ -22,7 +22,7 @@ const WhoAmI = () => {
             />
         </div>
         <div className='h-48 w-48 rounded-full relative self-center group m-12 flex justify-center'>
-            <Image src={LightModePortrait} fill={true} objectFit='cover' className='rounded-full border-4 border-black'/>
+            <Image src={LightModePortrait} fill={true} alt='Portrait of Marlène.D made by herself (graphical illustration)' className='rounded-full border-4 border-black object-cover'/>
             <span className="absolute bottom-0 scale-0 rounded bg-purple-dark p-1 text-[10px] font-roboto text-white group-hover:scale-100">✨ Je me suis même dessinée !✨</span>
         </div>
     </div>
