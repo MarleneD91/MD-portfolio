@@ -13,7 +13,8 @@ module.exports = {
         'purple-dark' : '#232127',
         'green-dark' : '#303430',
         'footer-txt': '#353535',
-        'grey-txt' : '#2D2626'
+        'grey-txt' : '#2D2626',
+        'light-grey-form' : '#EFECEC'
       },
       fontFamily: {
         sansita: ['var(--font-sansita)'],
