@@ -13,19 +13,19 @@ import { FaCircle } from "react-icons/fa";
 
 const Curriculum = () => {
   return (
-    <div className='mt-8 mb-8'>
-        <h2 className='font-sansita font-regular text-4xl tracking-wider self-start ml-[114px]'>Formation :</h2>
+    <div className='mt-16 mb-8'>
+        <h2 className='font-sansita font-semibold text-4xl tracking-wide text-center'>Formation</h2>
         <div className='flex flex-col items-center mx-20'>
             <h3 className='font-gentium tracking-wider font-bold text-2xl mt-10'>2023</h3>
             <div className='flex flex-row m-4'>
                 <Image src={OPC} height={70} alt='OpenClassrooms logo' className='w-[70px]'/>
                 <FaCircle className='text-[6px] place-self-center ml-4'/>
                 <hr className='w-1/12 border-black border-[1px] place-self-center mr-4'/>
-                <p className='place-self-center font-gentium font-normal tracking-wider text-xl'>Développeur intégrateur web - Certification RCPN (bac+2)</p>
+                <p className='place-self-center font-gentium font-normal tracking-wide text-lg'>Développeur intégrateur web - Certification RCPN (bac+2)</p>
             </div>
             <h3 className='font-gentium tracking-wider font-bold text-2xl mt-10'>2015</h3>
             <div className='flex flex-row m-4'>
-                <p className='place-self-center font-gentium font-normal tracking-wider text-xl'>Master 2 Toxicologie Environnement Santé</p>
+                <p className='place-self-center font-gentium font-normal tracking-wide text-lg'>Master 2 Toxicologie Environnement Santé</p>
                 <hr className='w-1/12 border-black border-[1px] place-self-center ml-4'/>
                 <FaCircle className='text-[6px] place-self-center mr-2'/>
                 <Image src={ParisDiderot} height={160} alt='Paris Diderot (P7) University Logo' className='rotate-90 ml-28 -mt-20 -mb-20 w-[70px]'/>
@@ -35,7 +35,7 @@ const Curriculum = () => {
                 <Image src={UJF} height={60} alt='Joseph Fourier (Grenoble) University Logo' className='w-[305px]'/>
                 <FaCircle className='text-[6px] place-self-center ml-2'/>
                 <hr className='w-1/12 border-black border-[1px] place-self-center mr-4'/>
-                <p className='place-self-center font-gentium font-normal tracking-wider text-xl'>Master 2 Biologie Écologie Environnement</p>
+                <p className='place-self-center font-gentium font-normal tracking-wide text-lg'>Master 2 Biologie Écologie Environnement</p>
             </div>
         </div>
     </div>
