@@ -30,8 +30,8 @@ const Works = () => {
           <Carousel images={dataTest}/>
           <Image src={RightSakura} height={400} width={350} alt="Illustration made by MD of a left-facing sakura branch" className='-mr-[70px]'/>
         </div>
-        <WhatIUse elements={technoData} categoryName="Technologies "/>
-        <WhatIUse elements={toolData} categoryName="Outils "/>
+        <WhatIUse elements={technoData} key={technoData.id} categoryName="Technologies "/>
+        <WhatIUse elements={toolData} key={toolData.id} categoryName="Outils "/>
       </main>
       <Footer/>
     </div>
