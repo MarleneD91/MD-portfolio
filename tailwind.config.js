@@ -14,7 +14,9 @@ module.exports = {
         'green-dark' : '#303430',
         'footer-txt': '#353535',
         'grey-txt' : '#2D2626',
-        'light-grey-form' : '#EFECEC'
+        'light-grey-form' : '#EFECEC',
+        'carousel-dot':'#636565',
+        'carousel-light-dot':'#BBB9B9'
       },
       fontFamily: {
         sansita: ['var(--font-sansita)'],
