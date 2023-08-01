@@ -42,51 +42,58 @@ const ContactForm = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className="p-6 my-6 m-auto w-6/12 border-t rounded-[35px] bg-light-grey-form flex flex-col gap-5"
+        className="p-6 my-6 m-auto w-5/12 border-t rounded-[35px] bg-light-grey-form flex flex-col gap-5"
       >
-        <div className="flex flex-col">
-          <label htmlFor="name" className="w-11/12 place-self-start">Nom</label><br/>
+        <div className="flex flex-col mx-4">
+          <label htmlFor="name" className="w-11/12 place-self-start my-2">Nom</label>
           <input
             onChange={(e) => setName(e.target.value)}
             value={name}
             type="text"
             id="name"
             placeholder="Nom"
+            className="rounded-md p-1"
+            autoComplete="family-name"
           />
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col mx-4">
           <label htmlFor="firstname" className="w-11/12 place-self-start">Prénom</label><br/>
           <input
             onChange={(e) => setFirstName(e.target.value)}
             value={firstName}
             type="text"
-            id="Prénom"
+            id="firstname"
             placeholder="Prénom"
+            className="rounded-md p-1"
+            autoComplete="first-name"
           />
         </div>
-        <div className="flex flex-col">
-          <label htmlFor="email" className="w-11/12 place-self-start">Email</label><br/>
+        <div className="flex flex-col mx-4">
+          <label htmlFor="email" className="w-11/12 place-self-start my-2">Email</label>
           <input
             onChange={(e) => setEmail(e.target.value)}
             value={email}
             type="text"
             id="email"
             placeholder="prenom.nom@example.com"
+            className="rounded-md p-1"
+            autoComplete="email"
           />
         </div>
 
-        <div className="flex flex-col">
-          <label htmlFor="message" className="w-11/12 place-self-start">Message</label><br/>
+        <div className="flex flex-col mx-4">
+          <label htmlFor="message" className="w-11/12 place-self-start my-2">Message</label>
           <textarea
             onChange={(e) => setMessage(e.target.value)}
             value={message}
-            className="h-32"
+            className="h-32 rounded-md p-1"
             id="message"
             placeholder="Écrivez quelque chose ..."
+            autoComplete="off"
           ></textarea>
         </div>
 
-        <button className="bg-black text-white w-3/12 place-self-center p-2 rounded-xl font-sansita font-regular" type="submit">
+        <button className="bg-black text-white w-3/12 place-self-center px-2 pb-1 rounded-xl font-sansita font-regular" type="submit">
           Envoyer
         </button>
       </form>
