@@ -11,8 +11,8 @@ import { TypeAnimation } from 'react-type-animation';
 const WhoAmI = () => {
   return (
     <div className='flex flex-row justify-around content-center'>
-        <div className='text-center w-7/12'>
-            <h2 className='font-sansita font-bold text-5xl p-4 mb-4'>Qui suis-je ?</h2>
+        <div className='text-center w-7/12 mt-5'>
+            <h2 className='font-sansita font-bold text-5xl mb-6'>Qui suis-je ?</h2>
             <TypeAnimation className='font-gentium text-lg' style={{whiteSpace: 'pre-line'}} 
             sequence={[`Je suis Marlène D., ravie de vous rencontrer!\nAnciennement Professeur des Écoles, j’ai choisi de me consacrer pleinement à un domaine qui m’attirait depuis longtemps : le développement web.
                Vous trouverez ici mon parcours et les compétences que j’ai pu acquérir.
