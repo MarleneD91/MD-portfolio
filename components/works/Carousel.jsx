@@ -5,13 +5,6 @@ import { useState } from "react";
 import Swipe from "react-easy-swipe";
 import { FaChevronLeft, FaChevronRight, FaCircle } from 'react-icons/fa'
 
-/**
- * Carousel component for nextJS and Tailwind.
- * Using external library react-easy-swipe for swipe gestures on mobile devices (optional)
- *
- * @param images - Array of images with src and alt attributes
- * @returns React component
- */
 const Carousel = ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -26,16 +19,17 @@ const Carousel = ({ images }) => {
   };
 
   return (
-    <div className="relative">
-      <FaChevronLeft
-        onClick={handlePrevSlide}
-        className="absolute left-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
-      />
-      <div className="w-full h-[50vh] flex overflow-hidden relative m-auto">
+    <div className="flex flex-col justify-center w-5/12">
+      <div className="grid grid-cols-2 justify-between items-center z-20">
+        <FaChevronLeft onClick={handlePrevSlide} className=" text-5xl cursor-pointer text-gray-400 z-20" />
+        <FaChevronRight onClick={handleNextSlide} className=" text-5xl cursor-pointer text-gray-400 z-20" />
+      </div>
+      
+      <div className="w-6/12 h-[50vh] flex overflow-hidden m-auto place-content-center">
         <Swipe
           onSwipeLeft={handleNextSlide}
           onSwipeRight={handlePrevSlide}
-          className="relative z-10 w-full h-full"
+          className="z-10 h-100 w-100 place-items-center"
         >
           {images.map((image, index) => {
             if (index === currentSlide) {
@@ -43,28 +37,25 @@ const Carousel = ({ images }) => {
                 <Image
                   key={image.id}
                   src={image.picture}
-                  layout="fill"
-                  objectFit="contain"
-                  className="animate-fadeIn"
+                  width={500}
+                  height={300}
+                  className="animate-fadeIn object-contain"
                 />
               );
             }
           })}
         </Swipe>
       </div>
-      <FaChevronRight
-        onClick={handleNextSlide}
-        className="absolute right-0 m-auto text-5xl inset-y-1/2 cursor-pointer text-gray-400 z-20"
-      />
 
-      <div className="relative flex justify-center p-2">
+
+      <div className="relative flex justify-center p-2 z-30">
         {images.map((_, index) => {
           return (
-            <div
+            <FaCircle
               className={
                 index === currentSlide
-                  ? "h-4 w-4 bg-gray-700 rounded-full mx-2 mb-2 cursor-pointer"
-                  : "h-4 w-4 bg-gray-300 rounded-full mx-2 mb-2 cursor-pointer"
+                  ? "text-sm text-carousel-dot mx-1 my-2 cursor-pointer"
+                  : "text-sm text-carousel-light-dot mx-1 my-2 cursor-pointer"
               }
               key={index}
               onClick={() => {
