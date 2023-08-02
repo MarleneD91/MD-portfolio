@@ -25,11 +25,11 @@ const Carousel = ({ images }) => {
     <div className="flex flex-col justify-center w-8/12 mb-8">
       <div className="flex flex-row">
         <FaChevronLeft onClick={handlePrevSlide} className=" text-5xl cursor-pointer text-gray-400 place-self-center z-20 ml-2 hover:text-gray-500" />
-        <div className="h-[300px] flex overflow-hidden m-auto place-content-center">
+        <div className="h-[300px] overflow-hidden m-auto place-content-center">
           {images.map((image, index) => {
               if (index === currentSlide) {
                 return (
-                  <Image key={image.id} src={image.picture} width={500} height={300} className="animate-fadeIn opacity-75 hover:opacity-100 rounded-sm w-full h-auto" alt={image.title} />
+                  <Image key={image.id} src={image.picture} width={500} height={300} className="opacity-75 hover:opacity-100 rounded-sm w-full object-cover" alt={image.title} />
                 )
               }
             })}
@@ -46,7 +46,7 @@ const Carousel = ({ images }) => {
       {images.map((image, index) => {
         if(index === currentSlide){
           return (
-            <div className=" bg-light-grey-form rounded-2xl p-4 m-4 border-2 border-zinc-400" key={image.title}>
+            <div className=" bg-light-gray-form dark:bg-dark-gray-form rounded-2xl p-4 m-4 border-2 border-zinc-400" key={image.title}>
               <h3 className="font-sansita font-semibold text-xl tracking-wide text-center">{image.title}</h3>
               <div className="my-4">
               <h4 className="font-sansita text-base underline underline-offset-2">Description du projet</h4>
