@@ -8,15 +8,18 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        'green-light' : '#BDD2C6',
-        'white-light' : '#FDF8FA',
-        'purple-dark' : '#232127',
-        'green-dark' : '#303430',
-        'footer-txt': '#353535',
-        'grey-txt' : '#2D2626',
-        'light-grey-form' : '#EFECEC',
+        'green-light':'#BDD2C6',
+        'white-light':'#FDF8FA',
+        'purple-dark':'#232127',
+        'green-dark':'#303430',
+        'light-footer-txt':'#353535',
+        'dark-footer-txt':'#dedede',
+        'gray-txt' : '#2D2626',
+        'light-gray-form':'#EFECEC',
+        'dark-gray-form':'#424145',
         'carousel-dot':'#636565',
-        'carousel-light-dot':'#BBB9B9'
+        'carousel-light-dot':'#BBB9B9',
+        'dark-mode-white':'#ededed'
       },
       fontFamily: {
         sansita: ['var(--font-sansita)'],
@@ -24,7 +27,7 @@ module.exports = {
         roboto: ['var(--font-roboto)']
       }
     },
- 
   },
   plugins: [],
+  darkMode: "class"
 }
