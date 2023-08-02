@@ -1,22 +1,47 @@
 [
     {
         "picture" : "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-1.jpg",
-        "id" : "1"
+        "id" : "1",
+        "title" : "Première photo",
+        "description" : "description de la première photo",
+        "issues" : "le ménage n'était pas fait",
+        "technos" : ["CSS3","HTML5"],
+        "githubLink" : "https://github.com/MarleneD91/kasa-react-app/blob/master/src/pages/Housing.jsx"
     },
     {
         "picture" :  "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-2.jpg",
-        "id" : "2"
+        "id" : "2",
+        "title" : "Deuxième photo",
+        "description" : "description de la deuxième photo",
+        "issues" : "les volets ne fermaient pas",
+        "technos" : ["CSS3","HTML5","JS"],
+        "githubLink" : "https://github.com/MarleneD91/kasa-react-app/blob/master/src/pages/Housing.jsx"
     },
     {
         "picture" : "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-3.jpg",
-        "id" : "3"     
+        "id" : "3",
+        "title" : "Troisième photo",
+        "description" : "description de la troisième photo",
+        "issues" : "Les draps étaient sales",
+        "technos" : ["NODEJS","MONGODB"],
+        "githubLink" : "https://github.com/MarleneD91/kasa-react-app/blob/master/src/pages/Housing.jsx"     
     },
     {
         "picture" : "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-4.jpg",
-        "id" : "4"
+        "id" : "4",
+        "title" : "Quatrième photo",
+        "description" : "description de la quatrième photo",
+        "issues" : "Pas de frigo fonctionnel!",
+        "technos" : ["REACT","SASS"],
+        "githubLink" : "https://github.com/MarleneD91/kasa-react-app/blob/master/src/pages/Housing.jsx"
     },
     {
         "picture" : "https://s3-eu-west-1.amazonaws.com/course.oc-static.com/projects/front-end-kasa-project/accommodation-20-5.jpg",
-        "id" : "5"
+        "id" : "5",
+        "title" : "Cinquième photo",
+        "description" : "description de la cinquième photo",
+        "issues" : "Le bruit de la vmc nous a empêché de dormir.",
+        "technos" : ["NEXTJS","TAILWINDCSS"],
+        "githubLink" : "https://github.com/MarleneD91/kasa-react-app/blob/master/src/pages/Housing.jsx"
     }
 ]
