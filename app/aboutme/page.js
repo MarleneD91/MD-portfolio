@@ -19,12 +19,12 @@ const AboutMe = () => {
         <main className='flex flex-col'>
           <WhoAmI />
           <div className='flex flex-row justify-center align-middle mt-2 mb-2  drop-shadow-[5px]:opacity-60 shadow-black'>
-            <FaCircle className='text-[7px]'/><hr className="border-[1px] border-black w-11/12 shadow-black shadow-lg place-self-center"/><FaCircle className='text-[7px]'/>
+            <FaCircle className='text-[7px]'/><hr className="border-[1px] border-black dark:border-dark-mode-white w-11/12 shadow-black shadow-lg place-self-center"/><FaCircle className='text-[7px]'/>
           </div>
           <Skills/>
           <Curriculum/>
           <div className='flex flex-row justify-center align-middle mt-2 mb-2  drop-shadow-[5px]:opacity-60 shadow-black'>
-            <FaCircle className='text-[7px]'/><hr className="border-[1px] border-black w-11/12 shadow-black shadow-lg place-self-center"/><FaCircle className='text-[7px]'/>
+            <FaCircle className='text-[7px]'/><hr className="border-[1px] border-black dark:border-dark-mode-white w-11/12 shadow-black shadow-lg place-self-center"/><FaCircle className='text-[7px]'/>
           </div>
           <CV/>
         </main>
