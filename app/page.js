@@ -11,9 +11,9 @@ export default function Home() {
     <div className='flex flex-col h-screen justify-between'>
       <Header/>
         <main >
-          <div className='text-black flex flex-col items-center justify-between'>
+          <div className='flex flex-col items-center justify-between'>
             <HomeAnimatedText/>
-            <div className='group relative m-8 flex justify-center'>
+            <div className='group relative m-5 flex justify-center'>
               <Image src={Cactus} height={200} alt='Cactus illustration for the plant-themed portfolio, made by MD' className="w-auto" priority={true}/>
               <span className="absolute bottom-0 scale-0 rounded bg-purple-dark p-1 text-[10px] font-roboto text-white group-hover:scale-100">✨ Je réalise aussi des illustrations ✨</span>
             </div>
