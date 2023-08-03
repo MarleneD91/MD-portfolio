@@ -17,6 +17,7 @@ module.exports = {
         'gray-txt' : '#2D2626',
         'light-gray-form':'#EFECEC',
         'dark-gray-form':'#424145',
+        'dark-blue-form':'#2D2A33',
         'carousel-dot':'#636565',
         'carousel-light-dot':'#BBB9B9',
         'dark-mode-white':'#ededed',
