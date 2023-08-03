@@ -29,7 +29,7 @@ const Carousel = ({ images }) => {
           {images.map((image, index) => {
               if (index === currentSlide) {
                 return (
-                  <Image key={image.id} src={image.picture} width={500} height={300} className="opacity-75 hover:opacity-100 rounded-sm w-full object-cover" alt={image.title} />
+                  <Image key={image.id} src={image.picture} width={500} height={300} className="opacity-75 hover:opacity-100 rounded-sm h-full w-full object-cover" alt={image.title} />
                 )
               }
             })}
