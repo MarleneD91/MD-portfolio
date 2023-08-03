@@ -15,8 +15,8 @@ export default function Home() {
           <div className='flex flex-col items-center justify-between'>
             <HomeAnimatedText/>
             <div className='group relative m-5 flex justify-center'>
-              <Image src={Cactus} height={200} alt='Cactus in a pot illustration for the plant-themed portfolio, made by MD' className="w-auto dark:hidden" priority={true}/>
-              <Image src={Magnolia} height={300} alt='Magnolia flower illustration for the plant-themed portfolio, made by MD' className="w-auto hidden dark:block" priority={true}/>
+              <Image src={Cactus} height={320} width={320} alt='Cactus in a pot illustration for the plant-themed portfolio, made by MD' className="w-auto dark:hidden h-[320px]" priority={true}/>
+              <Image src={Magnolia} height={320} width={320} alt='Magnolia flower illustration for the plant-themed portfolio, made by MD' className="w-auto hidden dark:block h-[320px]" priority={true}/>
               <span className="absolute bottom-0 scale-0 rounded bg-purple-dark p-1 text-[10px] font-roboto text-white group-hover:scale-100">✨ Je réalise aussi des illustrations ✨</span>
             </div>
           </div>
