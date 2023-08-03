@@ -19,7 +19,12 @@ module.exports = {
         'dark-gray-form':'#424145',
         'carousel-dot':'#636565',
         'carousel-light-dot':'#BBB9B9',
-        'dark-mode-white':'#ededed'
+        'dark-mode-white':'#ededed',
+        'switcher-sun-bg':'#484545',
+        'switcher-moon-bg':'#BBB9B9',
+        'switcher-button-white':'#EBE6F9',
+        'moon':"#0C0B2E",
+        'sun':'#DCB839'
       },
       fontFamily: {
         sansita: ['var(--font-sansita)'],
