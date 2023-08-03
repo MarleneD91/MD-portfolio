@@ -5,6 +5,7 @@ import React from 'react'
 import Image from 'next/image'
 
 import LightModePortrait from '@/public/images/portrait-light-v.png'
+import DarkModePortrait from '@/public/images/portrait-dark-v.png'
 
 import { TypeAnimation } from 'react-type-animation';
 
@@ -22,7 +23,8 @@ const WhoAmI = () => {
             />
         </div>
         <div className='h-48 w-48 rounded-full relative self-center group m-12 flex justify-center'>
-            <Image src={LightModePortrait} fill={true} alt='Portrait of Marlène.D made by herself (graphical illustration)' className='rounded-full border-4 border-black object-cover'/>
+            <Image src={LightModePortrait} fill={true} alt='Portrait of Marlène.D made by herself (graphical illustration)' className='rounded-full border-4 border-black object-cover dark:hidden'/>
+            <Image src={DarkModePortrait} fill={true} alt='Portrait of Marlène.D made by herself (graphical illustration)' className='rounded-full border-4 border-white object-cover hidden dark:block'/>
             <span className="absolute bottom-0 scale-0 rounded bg-purple-dark p-1 text-[10px] font-roboto text-white group-hover:scale-100">✨ Je me suis même dessinée !✨</span>
         </div>
     </div>
