@@ -42,7 +42,7 @@ const ContactForm = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className="p-6 my-6 m-auto w-5/12 border border-1 rounded-[35px] bg-light-gray-form dark:bg-dark-gray-form flex flex-col gap-5"
+        className="p-6 my-6 m-auto w-5/12 border border-1 border-gray-300 dark:border-gray-500 rounded-[35px] bg-light-gray-form dark:bg-dark-gray-form flex flex-col gap-5"
       >
         <div className="flex flex-col mx-4">
           <label htmlFor="name" className="w-11/12 place-self-start my-2">Nom</label>
@@ -52,7 +52,7 @@ const ContactForm = () => {
             type="text"
             id="name"
             placeholder="Nom"
-            className="rounded-md p-1"
+            className="rounded-md p-1 dark:bg-dark-blue-form"
             autoComplete="family-name"
           />
         </div>
@@ -64,7 +64,7 @@ const ContactForm = () => {
             type="text"
             id="firstname"
             placeholder="Prénom"
-            className="rounded-md p-1"
+            className="rounded-md p-1 dark:bg-dark-blue-form"
             autoComplete="first-name"
           />
         </div>
@@ -76,7 +76,7 @@ const ContactForm = () => {
             type="text"
             id="email"
             placeholder="prenom.nom@example.com"
-            className="rounded-md p-1"
+            className="rounded-md p-1 dark:bg-dark-blue-form"
             autoComplete="email"
           />
         </div>
@@ -86,7 +86,7 @@ const ContactForm = () => {
           <textarea
             onChange={(e) => setMessage(e.target.value)}
             value={message}
-            className="h-32 rounded-md p-1"
+            className="h-32 rounded-md p-1 dark:bg-dark-blue-form"
             id="message"
             placeholder="Écrivez quelque chose ..."
             autoComplete="off"
