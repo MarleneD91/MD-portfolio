@@ -4,9 +4,8 @@ import Image from "next/image";
 import { useState } from "react";
 
 
-import { FaChevronLeft, FaChevronRight, FaCircle } from 'react-icons/fa'
+import { FaChevronLeft, FaChevronRight, FaCircle, FaGithub } from 'react-icons/fa'
 
-import GithubLogo from '@/public/icons/black-github.png'
 
 const Carousel = ({ images }) => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -39,7 +38,7 @@ const Carousel = ({ images }) => {
       <div className="relative flex justify-center pb-3 z-30">
         {images.map((_, index) => {
           return (
-            <FaCircle className={index === currentSlide ? "text-sm text-carousel-dot mx-1 my-2 cursor-pointer" : "text-sm text-carousel-light-dot mx-1 my-2 cursor-pointer hover:text-gray-400"} key={index} onClick={() => {setCurrentSlide(index)}} />
+            <FaCircle className={index === currentSlide ? "text-sm text-carousel-dot dark:text-carousel-light-dot mx-1 my-2 cursor-pointer" : "text-sm text-carousel-light-dot dark:text-carousel-dot mx-1 my-2 cursor-pointer hover:text-gray-400"} key={index} onClick={() => {setCurrentSlide(index)}} />
           )
         })}
       </div>
@@ -66,7 +65,7 @@ const Carousel = ({ images }) => {
                     }
                   })}
                 </ul>
-                <a href={image.githubLink}><Image src={GithubLogo} height={40} width={40} alt="Logo of Github, black version, associated to a link to project's repository"/></a>
+                <a href={image.githubLink}><FaGithub className="text-4xl" /></a>
               </div>  
             </div>
           )
