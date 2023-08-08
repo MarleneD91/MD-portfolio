@@ -9,6 +9,8 @@ import DarkModePortrait from '@/public/images/portrait-dark-v.png'
 
 import { TypeAnimation } from 'react-type-animation';
 
+import ThemeImg from '../common/ThemeImg'
+
 const WhoAmI = () => {
   return (
     <div className='flex flex-row justify-around content-center'>
@@ -22,11 +24,17 @@ const WhoAmI = () => {
                 speed={50}
             />
         </div>
-        <div className='h-48 w-48 rounded-full relative self-center group m-12 flex justify-center'>
-            <Image src={LightModePortrait} fill={true} alt='Portrait of Marlène.D made by herself (graphical illustration)' className='rounded-full border-4 border-black object-cover dark:hidden'/>
-            <Image src={DarkModePortrait} fill={true} alt='Portrait of Marlène.D made by herself (graphical illustration)' className='rounded-full border-4 border-white object-cover hidden dark:block'/>
-            <span className="absolute bottom-0 scale-0 rounded bg-purple-dark p-1 text-[10px] font-roboto text-white group-hover:scale-100">✨ Je me suis même dessinée !✨</span>
+        <div className='relative group'>
+          <div className='w-48 h-48 rounded-full border-4 border-black dark:border-white m-12 overflow-hidden'>
+            <ThemeImg LightImage={LightModePortrait} DarkImage={DarkModePortrait} 
+                      altDark={"Portrait of Marlène.D made by herself (graphical illustration)"} altLight={"Portrait of Marlène.D made by herself (graphical illustration)"}
+                      height={400} width={400}
+                      className="w-5/6 h-4/6"/>
+            
+          </div>
+          <span className="absolute bottom-5 left-14 scale-0 rounded bg-purple-dark p-1 text-[10px] font-roboto text-white group-hover:scale-100">✨ Je me suis même dessinée !✨</span>
         </div>
+         
     </div>
   )
 }
