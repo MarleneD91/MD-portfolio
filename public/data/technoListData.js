@@ -1,52 +1,46 @@
+import { FaHtml5, FaCss3Alt, FaSass, FaReact, FaNodeJs } from "react-icons/fa";
+import { SiTailwindcss, SiJavascript, SiExpress, SiMongodb } from "react-icons/si";
+import { TbBrandNextjs } from "react-icons/tb";
+
 export const technoData = [
     {
-        "id" : "HTML",
-        "icon" : require("/public/icons/HTML.png"),
-        "alt" : "black logo of HTML"
+        "icon" : <FaHtml5/>,
+        "id" : "HTML5"
+    },
+    { 
+        "icon" : <FaCss3Alt />,
+        "id" : "CSS3"
     },
     {
-        "id" : "CSS",
-        "icon" : require("/public/icons/CSS.png"),
-        "alt" : "black logo of CSS"
+        "icon" : <FaSass />,
+        "id" : "Sass"
     },
     {
-        "id" : "Sass",
-        "icon" : require("/public/icons/Sass.png"),
-        "alt" : "black logo of Sass"
+        "icon" : <SiTailwindcss />,
+        "id" : "TailwindCSS"
     },
     {
-        "id" : "Tailwind CSS",
-        "icon" : require("/public/icons/tailwind-css.png"),
-        "alt" : "black logo of Tailwind CSS"
+        "icon" : <SiJavascript />,
+        "id" : "JavaScript"
     },
     {
-        "id" : "JS",
-        "icon" : require("/public/icons/JS.png"),
-        "alt" : "black logo of JavaScript"
+        "icon" : <FaReact />,
+        "id" : "React"
     },
     {
-        "id" : "React",
-        "icon" : require("/public/icons/React.png"),
-        "alt" : "black logo of React"
+        "icon" : <TbBrandNextjs />,
+        "id": "Next.js"
     },
     {
-        "id" : "NextJS",
-        "icon" : require("/public/icons/NextJS.png"),
-        "alt" : "black logo of NextJS"
+        "icon" : <FaNodeJs />,
+        "id" : "Node.js"
     },
     {
-        "id" : "NodeJS",
-        "icon" : require("/public/icons/NodeJS.png"),
-        "alt" : "black logo of NodeJS"
+        "icon" : <SiExpress />,
+        "id" : "Express.js"
     },
     {
-        "id" : "ExpressJS",
-        "icon" : require("/public/icons/ExpressJS.png"),
-        "alt" : "black logo of ExpressJS"
-    },
-    {
-        "id" : "MongoDB",
-        "icon" : require("/public/icons/MongoDB.png"),
-        "alt" : "black logo of MongoDB"
+        "icon" : <SiMongodb />,
+        "id" : "MongoDb"
     }
 ]
