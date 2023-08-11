@@ -4,10 +4,10 @@ import { useState } from "react";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
-  const [firstName, setFirstName] = useState("");
+  const [firstname, setFirstname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [error, setError] = useState([]);
+  const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -20,7 +20,7 @@ const ContactForm = () => {
       },
       body: JSON.stringify({
         name,
-        firstName,
+        firstname,
         email,
         message,
       }),
@@ -32,7 +32,7 @@ const ContactForm = () => {
 
     if (success) {
       setName("");
-      setFirstName("");
+      setFirstname("");
       setEmail("");
       setMessage("");
     }
@@ -53,19 +53,19 @@ const ContactForm = () => {
             id="name"
             placeholder="Nom"
             className="rounded-md p-1 dark:bg-dark-blue-form"
-            autoComplete="family-name"
+            autoComplete="off"
           />
         </div>
         <div className="flex flex-col mx-4">
-          <label htmlFor="firstname" className="w-11/12 place-self-start">Prénom</label><br/>
+          <label htmlFor="firstname" className="w-11/12 place-self-start my-2">Prénom</label>
           <input
-            onChange={(e) => setFirstName(e.target.value)}
-            value={firstName}
+            onChange={(e) => setFirstname(e.target.value)}
+            value={firstname}
             type="text"
             id="firstname"
             placeholder="Prénom"
             className="rounded-md p-1 dark:bg-dark-blue-form"
-            autoComplete="first-name"
+            autoComplete="off"
           />
         </div>
         <div className="flex flex-col mx-4">
@@ -77,7 +77,7 @@ const ContactForm = () => {
             id="email"
             placeholder="prenom.nom@example.com"
             className="rounded-md p-1 dark:bg-dark-blue-form"
-            autoComplete="email"
+            autoComplete="off"
           />
         </div>
 
@@ -94,22 +94,9 @@ const ContactForm = () => {
         </div>
 
         <button className="bg-black text-white w-3/12 place-self-center px-2 pb-1 rounded-xl font-sansita font-regular" type="submit">
-          Envoyer
+          {!success ? "Envoyer" : "Merci!"}
         </button>
       </form>
-
-      <div className="bg-slate-100 flex flex-col">
-        {error &&
-          error.map((e) => (
-            <div
-              className={`${
-                success ? "text-green-800" : "text-red-600"
-              } px-5 py-2`}
-            >
-              {e}
-            </div>
-          ))}
-      </div>
     </>
   );
 }
