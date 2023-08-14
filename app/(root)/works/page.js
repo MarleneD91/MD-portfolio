@@ -18,6 +18,20 @@ import { technoData } from '@/public/data/technoListData.js'
 import { toolData } from '@/public/data/toolListData.js'
 
 const Works = () => {
+
+  const getWorksData = async () =>{
+    const res = await fetch('/api/works',{
+      method: 'GET',
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+    const resData = res.json()
+    return resData
+  }
+  const getWorks = getWorksData();
+  console.log(getworks)
+
   return (
     <div className='flex flex-col h-screen justify-between'>
       <Header/>
@@ -26,7 +40,7 @@ const Works = () => {
         N’hésitez pas à cliquer sur le lien des repositories Github associés! </p>
         <div className='flex flex-row justify-between my-6'>
           <Image src={LeftSakura} width={350} alt="Illustration made by MD of a right-facing sakura branch" className='-ml-[70px] h-[400px]'/>
-          <Carousel images={dataTest}/>
+          <Carousel works={getWorks}/>
           <Image src={RightSakura} width={350} alt="Illustration made by MD of a left-facing sakura branch" className='-mr-[70px] h-[400px]'/>
         </div>
         {/*<Description elements={dataTest}/>*/}
