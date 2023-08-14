@@ -7,14 +7,14 @@ import React from 'react'
 import { useState } from "react";
 
 
-const SignInForm = () => {
+const SignUpForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
 
-    const checkUser = async (e) => {
+    const createUser = async (e) => {
         e.preventDefault();
     
-        const res = await fetch("api/login", {
+        const res = await fetch("api/signup", {
           method: "POST",
           headers: {
             "Content-type": "application/json",
@@ -28,8 +28,9 @@ const SignInForm = () => {
 
   return (
     <div>
+       
         <form className="p-6 my-6 m-auto w-4/12 border border-1 border-gray-300 dark:border-gray-500 rounded-[35px] bg-light-gray-form dark:bg-dark-gray-form flex flex-col items-center gap-6" 
-              onSubmit={checkUser}>
+              onSubmit={createUser}>
         <div className="flex flex-col mx-4">
           <label htmlFor="user" className="w-11/12 text-center my-2">Identifiant</label>
           <input
@@ -54,10 +55,10 @@ const SignInForm = () => {
             autoComplete="off"
           />
         </div>
-        <button className="bg-black text-white w-4/12 place-self-center px-2 pb-1 rounded-xl font-sansita font-regular" type="submit">S'enregistrer</button>
+        <button className="bg-black text-white w-4/12 place-self-center px-2 pb-1 rounded-xl font-sansita font-regular" type="submit">S'enregistrer'</button>
         </form>
     </div>
   )
 }
 
-export default SignInForm
+export default SignUpForm
