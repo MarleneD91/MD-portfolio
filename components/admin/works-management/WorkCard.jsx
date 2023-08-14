@@ -1,4 +1,6 @@
-import React from 'react'
+"use client"
+
+import React, { useState } from 'react'
 
 import Image from 'next/image'
 
@@ -7,6 +9,16 @@ import { FaTrashAlt, FaPencilAlt } from "react-icons/fa"
 
 
 const WorkCard = ({works}) => {
+
+  const [editWorkModal, setEditWorkModal] = useState(false)
+  const manageEditModal = () => {
+    setEditWorkModal(!editWorkModal)
+  }
+
+  const handleWorkDeletion = () => {
+    return("Work deleted!")
+  }
+
   return (
     <>
       {works.map(work =>
@@ -18,12 +30,12 @@ const WorkCard = ({works}) => {
           </div>
           <hr className='w-5/6'/>
           <div>
-            <div className='flex flex-row text-l mt-2 items-center'>
+            <div className='flex flex-row text-l mt-2 items-center' onClick={manageEditModal}>
               <FaPencilAlt className='mr-2'/> <span>Éditer</span>
             </div>
             {/* Add an onclick fonction to open a modal to edit the project -the supp/edit modal can be a component!? */}
-            <div className='flex flex-row text-l mt-2 items-center'>
-              <FaTrashAlt className='mr-2' />  <span>Supprimer</span>
+            <div className='flex flex-row text-l mt-2 items-center' onClick={handleWorkDeletion}>
+              <FaTrashAlt className='mr-2'/>  <span>Supprimer</span>
             </div>
             {/* Add an onclick fonction to open a modal to supp the project */}
           </div>
