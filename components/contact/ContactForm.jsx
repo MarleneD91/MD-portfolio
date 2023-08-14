@@ -7,13 +7,12 @@ const ContactForm = () => {
   const [firstname, setFirstname] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [error, setError] = useState("");
   const [success, setSuccess] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    const res = await fetch("api/contact", {
+    const res = await fetch("/api/contact", {
       method: "POST",
       headers: {
         "Content-type": "application/json",
@@ -25,16 +24,16 @@ const ContactForm = () => {
         message,
       }),
     });
-
-    const { msg, success } = await res.json();
-    setError(msg);
-    setSuccess(success);
-
-    if (success) {
+    
+    console.log(res.status)
+    if(res.status === 200){
+      setSuccess(true);
       setName("");
       setFirstname("");
       setEmail("");
       setMessage("");
+    } else {
+      alert("Something went wrong while sending the message")
     }
   };
 
