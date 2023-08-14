@@ -16,7 +16,7 @@ const workSchema = new mongoose.Schema({
         type: Array,
         required: true
     },
-    githublink: {
+    githubLink: {
         type: Array,
         required: true
     },
@@ -27,4 +27,4 @@ const workSchema = new mongoose.Schema({
 })
 
 //Special case with NextJs. If model is already created in db, if not create it.
-export default mongoose.models.work || mongoose.model('work', workSchema)
+export default mongoose.models.Work || mongoose.model('Work', workSchema)
