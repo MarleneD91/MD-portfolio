@@ -4,7 +4,6 @@ const contactSchema = new mongoose.Schema({
     name: {
         type: String,
         required: [true, "Please provide a name"],
-        unique: true
     },
     firstname: {
         type: String,
@@ -12,7 +11,8 @@ const contactSchema = new mongoose.Schema({
     },
     email: {
         type: String,
-        required: [true, "Please provide an email address to message you back"]
+        required: [true, "Please provide an email address to message you back"],
+        unique: true
     },
     message: {
         type: String,
