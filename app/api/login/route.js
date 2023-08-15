@@ -1,6 +1,6 @@
 import connect from "@/lib/dbConfig";
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 import User from '@/models/userModel'
 
@@ -9,19 +9,22 @@ import jwt from "jsonwebtoken";
 
 
 
-export async function POST() {
+export async function POST(res) {
    
     try {
-        await connect()
+        const {username, password} = await res.json()
 
-        const {username, password} = await NextRequest.json()
+        await connect()
         
-        const existingUser = await User.findone({username})
+        const existingUser = await User.findOne({username})
+
         if(!existingUser){
             return NextResponse.json({message: 'Wrong username &/or password.'}, {status : 400})
         };
 
-        const validPassword = await bcryptjs.compare(password, user.password)
+        const validPassword = await bcryptjs.compare(password, existingUser.password)
+        console.log(validPassword)
+
         if(!validPassword){
             return NextResponse.json({message: 'Wrong username &/or password.'}, {status : 400})
         }
@@ -32,20 +35,18 @@ export async function POST() {
             email: existingUser.email
         }
 
-        const token = await jwt.sign(userData, process.env.TOKEN_SECRET, {expiresIn: "1d"})
+        const token = await jwt.sign(userData, process.env.TOKEN_SECRET, {expiresIn: "2h"})
+        console.log(userData)
+        console.log(token)
 
-        const response = NextResponse.json({
-            message: "Logged with success!",
-            success: true,
-        })
+        const response = NextResponse.json({message: "Logged with success!"}, {status: 200})
+        
 
-        response.cookies.set("token", token, {
-            httpOnly: true,
-        })
+        response.cookies.set("token", token, {httpOnly: true})
 
         return response
 
     } catch(err){
-        return NextResponse.json({error: err.message}, {status: 500})
+        return NextResponse.json({message: "Unable to log user : " + err}, {status: 500})
     }
 }

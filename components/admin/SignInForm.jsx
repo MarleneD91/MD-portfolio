@@ -1,5 +1,6 @@
 "use client"
 
+import { useRouter } from 'next/navigation';
 import React from 'react'
 
 
@@ -10,6 +11,8 @@ import { useState } from "react";
 const SignInForm = () => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const [success, setSuccess] = useState(false);
+    const router = useRouter()
 
     const checkUser = async (e) => {
         e.preventDefault();
@@ -24,6 +27,16 @@ const SignInForm = () => {
             password
           }),
         });
+
+
+        if(res.status === 200){
+          setSuccess(true);
+          setUsername("");
+          setPassword("");
+          router.push("/admin")
+        } else {
+          alert("Connection failed.")
+        }
     }
 
   return (
@@ -54,7 +67,9 @@ const SignInForm = () => {
             autoComplete="off"
           />
         </div>
-        <button className="bg-black text-white w-4/12 place-self-center px-2 pb-1 rounded-xl font-sansita font-regular" type="submit">S'enregistrer</button>
+        <button className="bg-black text-white w-4/12 place-self-center px-2 pb-1 rounded-xl font-sansita font-regular" type="submit">
+          {!success ? "S'enregistrer" : "Connexion réussie!"}
+        </button>
         </form>
     </div>
   )
