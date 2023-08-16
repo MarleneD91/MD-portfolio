@@ -16,7 +16,9 @@ export async function POST(req) {
         return NextResponse.json({message: "Message sent!"}, {status: 200})
 
     } catch(err) {
+
         return NextResponse.json({message: "Something went wrong while sending the message : " + err}, {status: 400})
+    
     }
 
 }
