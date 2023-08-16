@@ -8,7 +8,7 @@ import React from 'react'
 import { useState } from "react";
 
 
-const SignInForm = () => {
+const SignInForm = ({onLogin}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [success, setSuccess] = useState(false);
@@ -37,6 +37,8 @@ const SignInForm = () => {
         } else {
           alert("Connection failed.")
         }
+
+        onLogin({username,password})
     }
 
   return (
@@ -44,7 +46,7 @@ const SignInForm = () => {
         <form className="p-6 my-6 m-auto w-4/12 border border-1 border-gray-300 dark:border-gray-500 rounded-[35px] bg-light-gray-form dark:bg-dark-gray-form flex flex-col items-center gap-6" 
               onSubmit={checkUser}>
         <div className="flex flex-col mx-4">
-          <label htmlFor="user" className="w-11/12 text-center my-2">Identifiant</label>
+          <label htmlFor="user" className="text-center my-2">Identifiant</label>
           <input
             onChange={(e) => setUsername(e.target.value)}
             value={username}
@@ -56,7 +58,7 @@ const SignInForm = () => {
           />
         </div>
         <div className="flex flex-col mx-4">
-          <label htmlFor="password" className="w-11/12 text-center my-2">Mot de passe</label>
+          <label htmlFor="password" className="text-center my-2">Mot de passe</label>
           <input
             onChange={(e) => setPassword(e.target.value)}
             value={password}
@@ -68,7 +70,7 @@ const SignInForm = () => {
           />
         </div>
         <button className="bg-black text-white w-4/12 place-self-center px-2 pb-1 rounded-xl font-sansita font-regular" type="submit">
-          {!success ? "S'enregistrer" : "Connexion réussie!"}
+          {!success ? "Se connecter" : "Connexion réussie!"}
         </button>
         </form>
     </div>
