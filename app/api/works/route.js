@@ -2,7 +2,7 @@ import connect from "@/lib/dbConfig"; // Connection to db
 
 import workModel from "@/models/workModel";
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
 export async function GET() {
     try {
@@ -15,15 +15,20 @@ export async function GET() {
 }
 
 export async function POST() {
-    const {title, description, issues, technos, githubLink, imageUrl} = await NextRequest.json()
+    
     try {
+
+        const {title, description, issues, technos, githubLink, imageUrl} = await res.json()
+
         await connect()
+
         await workModel.create({title, description, issues, technos, githubLink, imageUrl})
-        return NextResponse.json({
-            message: ["Work added to the database."],
-            success: true,
-        });
+
+        return NextResponse.json({ message: "Work added to the database." }, { status: 200 })
+
     } catch(err) {
-        return NextResponse.json({message: "Something went wrong while creating Work."})
+
+        return NextResponse.json({message: "Something went wrong while creating Work : " + err}, { status: 400 })
+    
     }
 }
