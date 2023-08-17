@@ -2,43 +2,44 @@ import connect from "@/lib/dbConfig";
 
 import workModel from "@/models/workModel";
 
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
 
-{/*export async function GET({params}){
+export async function DELETE({params}) {
+
+    const workId = params.id
+
     try{
         await connect()
 
-        const {id} = params
-        const work = await workModel.findOne({_id: id})
-
-        return NextResponse.json({work}, {status: 200})
-
-    } catch(err) {
-        return NextResponse.json({message: "Work not found."})
-    }
-}*/}
-
-export async function PUT(NextRequest, {params}){
-    try{
-        await connect()
-
-        const {id} = params
-        const {newTitle: title,
-                newDescription: description,
-                newIssues: issues,
-                newTechnos: technos,
-                newgithubLink: githubLink,
-                newImageUrl: imageUrl }  = await NextRequest.json()
-
-        const oldWork = await workModel.findOne({_id: id}).updateOne({})
-
-        //A retrouver, Comment récupérer les infos du body sans que cela prenne autant de place (cf vieux grimoir etc)
-
-        return NextResponse.json({work}, {status: 200})
-
-    } catch(err) {
-        return NextResponse.json({message: "Work not found."})
+        const findWork = await workModel.findOne({_id: workId})
+        if(!findWork){
+            return NextResponse.json({ message: "Work not found!" }, { status: 400 })
+        } else {
+            await workModel.deleteOne({_id: workId})
+            return NextResponse.json({ message: "Work deleted." }, { status: 200 })
+        }
+    } catch(err){
+        return NextResponse.json({message: "Something went wrong while deleting Work : " + err}, { status: 400 })
     }
 }
 
-export async function DELETE(NextRequest, {params})
+export async function PUT({params}) {
+
+    const workId = params.id
+
+    try{
+        await connect()
+
+        const findWork = await workModel.findOne({_id: workId})
+        const {title, description, issues, technos, githubLink, imageUrl} = await res.json()
+
+        if(!findWork){
+            return NextResponse.json({ message: "Work not found!" }, { status: 400 })
+        } else {
+            await workModel.updateOne({_id: workId}, {title: title, description: description, issues: issues, technos: technos, githubLink: githubLink, imageUrl: imageUrl} )
+            return NextResponse.json({ message: "Work updated." }, { status: 200 })
+        }
+    } catch(err){
+        return NextResponse.json({message: "Something went wrong while updating Work : " + err}, { status: 400 })
+    }
+}
