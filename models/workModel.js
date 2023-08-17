@@ -17,7 +17,7 @@ const workSchema = new mongoose.Schema({
         required: true
     },
     githubLink: {
-        type: Array,
+        type: String,
         required: true
     },
     imageUrl: {
