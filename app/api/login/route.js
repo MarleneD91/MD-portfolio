@@ -9,10 +9,10 @@ import jwt from "jsonwebtoken";
 
 
 
-export async function POST(res) {
+export async function POST(req) {
    
     try {
-        const {username, password} = await res.json()
+        const {username, password} = await req.json()
 
         await connect()
         
@@ -23,7 +23,6 @@ export async function POST(res) {
         };
 
         const validPassword = await bcryptjs.compare(password, existingUser.password)
-        console.log(validPassword)
 
         if(!validPassword){
             return NextResponse.json({message: 'Wrong username &/or password.'}, {status : 400})
@@ -37,10 +36,11 @@ export async function POST(res) {
 
         const token = await jwt.sign(userData, process.env.TOKEN_SECRET, {expiresIn: "2h"})
 
-        const response = NextResponse.json({message: "Logged with success!"}, {status: 200})
+        const response = NextResponse.json({message: "Logged with success!"}, {status: 200}, {token: token})
         
 
         response.cookies.set("token", token, {httpOnly: true})
+
 
         return response
 
