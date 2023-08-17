@@ -12,6 +12,7 @@ const SignInForm = ({onLogin}) => {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [success, setSuccess] = useState(false);
+
     const router = useRouter()
 
     const checkUser = async (e) => {
@@ -33,12 +34,11 @@ const SignInForm = ({onLogin}) => {
           setSuccess(true);
           setUsername("");
           setPassword("");
-          router.push("/admin")
+          localStorage.setItem("token", res.token)
+          router.refresh()
         } else {
           alert("Connection failed.")
         }
-
-        onLogin({username,password})
     }
 
   return (
