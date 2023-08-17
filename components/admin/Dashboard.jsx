@@ -10,11 +10,6 @@ import AddWorkForm from './works-management/AddWorkForm'
 
 const Dashboard = ({onLogout}) => {
 
-  const [isClient, setIsClient] = useState(false)
- 
-  useEffect(() => {
-    setIsClient(true)
-  }, [])
 
   const logout = () => {
     onLogout()
