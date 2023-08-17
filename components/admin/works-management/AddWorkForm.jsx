@@ -14,6 +14,8 @@ import { TbX } from "react-icons/tb"
 
 const AddWorkForm = () => {
 
+  const isConnected = localStorage.getItem("token")
+
   const [addWorkModal, setAddWorkModal] = useState(true)
   const closeModal = () => {
     setAddWorkModal(!addWorkModal)
@@ -30,9 +32,11 @@ const AddWorkForm = () => {
 
     const router = useRouter()
 
+  
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
+    if(isConnected) {
     const res = await fetch("api/works", {
       method: "POST",
       headers: {
@@ -50,27 +54,24 @@ const AddWorkForm = () => {
 
     if(res.status === 200){
       setSuccess(true);
-      alert("Work added!")
-      
-      setName("");
-      setFirstname("");
-      setEmail("");
-      setMessage("");
-      
-      router.push('/admin')
+      alert("Work added!")    
+      router.push("/admin")
+      setAddWorkModal(false)
     } else {
       alert("Something went wrong while creating the project.")
     }
   };
+} 
 
   const handleImg = (e) =>{
     setImageUrl(URL.createObjectURL(e.target.files[0]))
   }
 
   const handleTechnos = (e) => {
-    const value = e.target.value
+    const value = e.target.value.replace(/\s+/g, '')
     setTechnos(value.split(','))
   }
+  
   return (
     <>
     {addWorkModal ?
@@ -147,7 +148,7 @@ const AddWorkForm = () => {
                 onChange={handleImg}
                 type="file"
                 id="imageUrl"/>
-              {!imageUrl ? <></> : <Image src={imageUrl} width={250} height={200} alt="Image of the project"/>}
+              {!imageUrl ? <></> : <Image src={imageUrl} width={250} height={200} alt="Image of the project" className='m-4'/>}
             </div>
             
             <button className="bg-black text-white w-3/12 place-self-center px-2 pb-1 rounded-xl font-sansita font-regular" type="submit">
