@@ -7,14 +7,19 @@ import { NextResponse } from "next/server";
 export async function GET() {
     try {
         await connect()
+
         const works = await workModel.find()
+
         return NextResponse.json({works})
+
     } catch(err) {
+
         return NextResponse.json({message: "Something went wrong while retrieving works."})
+
     }
 }
 
-export async function POST() {
+export async function POST(res) {
     
     try {
 
