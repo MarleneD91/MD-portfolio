@@ -20,10 +20,9 @@ export default function Home() {
                             height={320} width={320} 
                             altLight={"Cactus in a pot illustration for the plant-themed portfolio, made by MD"} 
                             altDark={"Magnolia flower illustration for the plant-themed portfolio, made by MD"}
-                            className="h-[320px] w-auto"
+                            sizes="(max-width: 580px) 70vw"
+                            className="h-[320px] w-auto mobiles:h-auto"
                             />
-              {/*<Image src={Cactus} height={320} width={320} alt='Cactus in a pot illustration for the plant-themed portfolio, made by MD' className="w-auto dark:hidden h-[320px]" priority={true}/>
-              <Image src={Magnolia} height={320} width={320} alt='Magnolia flower illustration for the plant-themed portfolio, made by MD' className="w-auto hidden dark:block h-[320px]" priority={true}/>*/}
               <span className="absolute bottom-0 scale-0 rounded bg-purple-dark p-1 text-[10px] font-roboto text-white group-hover:scale-100">✨ Je réalise aussi des illustrations ✨</span>
             </div>
           </div>
