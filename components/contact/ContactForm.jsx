@@ -41,7 +41,7 @@ const ContactForm = () => {
     <>
       <form
         onSubmit={handleSubmit}
-        className="p-6 my-6 m-auto w-5/12 border border-1 border-gray-300 dark:border-gray-500 rounded-[35px] bg-light-gray-form dark:bg-dark-gray-form flex flex-col gap-5"
+        className="p-6 mobiles:p-3 my-6 m-auto w-5/12 mobiles:w-11/12 tablet:w-5/6 border border-1 border-gray-300 dark:border-gray-500 rounded-[35px] bg-light-gray-form dark:bg-dark-gray-form flex flex-col gap-5"
       >
         <div className="flex flex-col mx-4">
           <label htmlFor="name" className="w-11/12 place-self-start my-2">Nom</label>
