@@ -8,7 +8,7 @@ import WhiteLogo from '@/public/images/white-logo.png'
 
 const Header = () => {
   return (
-    <div className='bg-green-light  dark:bg-purple-dark flex flex-row items-center justify-between p-3 w-auto'>
+    <div className='bg-green-light  dark:bg-purple-dark flex flex-row items-center justify-between p-3 w-auto sm-devices:flex-col sm-devices:max-w-[100vw]'>
       <a href="/" className="relative">
         <ThemeImg LightImage={BlackLogo}
                   DarkImage={WhiteLogo}
@@ -16,12 +16,10 @@ const Header = () => {
                   width={102}
                   altLight={'Logo of MD, black version, MD letters and Cymothoe (butterfly) in an arrowed circle'} 
                   altDark={'Logo of MD, white version, MD letters and Cymothoe (butterfly) in an arrowed circle'}
-                  className='h-auto'
+                  className='h-auto mobiles:h-4'
         />
-        {/*<Image src={DarkLogo} height={102} alt='Logo of MD, black version, MD letters and Cymothoe (butterfly) in an arrow circle' className='h-auto block dark:hidden'/>
-        <Image src={WhiteLogo} height={102} alt='Logo of MD, white version, MD letters and Cymothoe (butterfly) in an arrow circle' className='h-auto hidden dark:block'/>*/}
       </a>
-      <Navbar/>
+      <Navbar />
     </div>
   )
 }
