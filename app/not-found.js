@@ -20,10 +20,10 @@ export default function Custom404() {
                     width={600}
                     altLight={'BLack 404 illustration with climbing ivy'}
                     altDark={'White404 illustration with climbing ivy'}
-                    className='w-600 -p-10 -my-24' 
+                    className='w-600 -p-10 -my-24 sm-devices:-my-14' 
                 />
-                <p className='font-gentium font-bold tracking-wide text-xl mb-6'>La page que vous recherchez n’existe pas!</p>
-                <a href='/' className='font-roboto text-sm italic underline underline-offset-4 mt-6 mb-10'><p>Retourner à l'accueil</p></a>
+                <p className='font-gentium font-bold tracking-wide text-xl mb-6 mobiles:mx-8 mobiles:text-center mobile-sm:text-lg'>La page que vous recherchez n’existe pas!</p>
+                <a href='/' className='font-roboto text-sm italic underline underline-offset-4 mt-6 mb-10 mobile-sm:text-xs'><p>Retourner à l'accueil</p></a>
             </main>
             <Footer/>
         </div>
