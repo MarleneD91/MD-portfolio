@@ -15,8 +15,8 @@ const WhoAmI = () => {
   return (
     <div className='flex flex-row justify-around content-center mobiles:flex-col-reverse mobiles:items-center'>
         <div className='text-center w-7/12 mt-5 mobiles:w-5/6 mobiles:mb-3'>
-            <h2 className='font-sansita font-bold text-5xl mb-6 mobiles:text-5xl'>Qui suis-je ?</h2>
-            <TypeAnimation className='font-gentium text-lg' style={{whiteSpace: 'pre-line'}} 
+            <h2 className='font-sansita font-bold text-5xl mb-6 mobile-sm:text-4xl'>Qui suis-je ?</h2>
+            <TypeAnimation className='font-gentium text-lg mobile-sm:text-base' style={{whiteSpace: 'pre-line'}} 
             sequence={[`Je suis Marlène D., ravie de vous rencontrer!\nAnciennement Professeur des Écoles, j’ai choisi de me consacrer pleinement à un domaine qui m’attirait depuis longtemps : le développement web.
                Vous trouverez ici mon parcours et les compétences que j’ai pu acquérir.
                 N’hésitez pas à me contacter pour plus d’informations ! `]}

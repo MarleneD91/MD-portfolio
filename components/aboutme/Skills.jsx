@@ -15,15 +15,15 @@ import LeftGingkoLeaf from '@/public/images/left-gingko-leaf.png'
 const Skills = () => {
   return (
     <>
-        <h2 className='font-sansita font-bold text-5xl mb-4 mt-5 text-center'>Compétences.</h2>
+        <h2 className='font-sansita font-bold text-5xl mb-4 mt-5 text-center mobile-sm:text-4xl'>Compétences.</h2>
         <div className='grid grid-cols-5'>
-          <Image src={LeftGingkoLeaf} width={250} alt='Drawing of a Gingko biloba leaf' className='h-auto self-end '/>
-          <div className='col-span-3 my-6 gap-12 px-5'>
-            <div className='grid grid-cols-2 justify-between mx-4 h-[350px]'>
-              <div className='pt-15 justify-self-start'>
-                <h3 className='font-sansita font-semibold text-xl tracking-widest my-4'>HARD SKILLS</h3>
+          <Image src={LeftGingkoLeaf} width={250} alt='Drawing of a Gingko biloba leaf' className='h-auto self-end'/>
+          <div className='col-span-3 my-6 gap-12 px-5 tablet:px-0 mobiles:flex mobiles:flex-col mobiles:gap-2'>
+            <div className='grid grid-cols-2 justify-between mx-4 h-[350px] tablet:h-[370px] mobiles:flex mobiles:flex-col mobiles:h-[450px] mobiles:items-center'>
+              <div className='pt-15 justify-self-start mobiles:text-center'>
+                <h3 className='font-sansita font-semibold text-xl tracking-widest my-4 mobiles:my-2 mobile-sm:text-lg'>HARD SKILLS</h3>
                 <Slide>
-                  <ul className='leading-8 font-gentium text-lg'>
+                  <ul className='leading-8 font-gentium text-lg mobile:text-base mobile-sm:leading-5 mobile-sm:text-sm'>
                     <li>Base de données</li>
                     <li>Concepts de programmation</li>
                     <li>Création graphique et maquettage</li>
@@ -34,10 +34,10 @@ const Skills = () => {
                   </ul>
                 </Slide>
               </div>
-              <div className='place-self-end pt-16'>
-                <h3 className='font-sansita font-semibold text-xl tracking-widest my-4'>SOFT SKILLS</h3>
+              <div className='place-self-end pt-16 mobiles:text-center mobiles:pt-4 mobiles:place-self-center'>
+                <h3 className='font-sansita font-semibold text-xl tracking-widest my-4 mobiles:my-2 mobile-sm:text-lg'>SOFT SKILLS</h3>
                 <Slide direction='right'>
-                  <ul className='leading-8 font-gentium text-lg'>
+                  <ul className='leading-8 font-gentium text-lg mobile:text-base mobile-sm:leading-5 mobile-sm:text-sm'>
                     <li>Autonomie</li>
                     <li>Créativité</li>
                     <li>Curiosité</li>
@@ -49,8 +49,8 @@ const Skills = () => {
               </div>
             </div>
             <div className='flex flex-col items-center mt-10'>
-              <h3 className='font-sansita font-semibold text-xl tracking-widest my-4'>HOBBIES</h3>
-              <div className='flex flex-row justify-between text-4xl mt-2'>
+              <h3 className='font-sansita font-semibold text-xl tracking-widest my-4 mobiles:my-2 mobile-sm:text-lg'>HOBBIES</h3>
+              <div className='flex flex-row justify-between text-4xl mt-2 mobile:text-3xl mobile-sm:text-2xl'>
                 <FaBook className='m-2'/>
                 <FaPalette className='m-2'/>
                 <FaPagelines className='m-2'/>
