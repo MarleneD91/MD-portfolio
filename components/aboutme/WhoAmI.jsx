@@ -4,8 +4,8 @@ import React from 'react'
 
 import Image from 'next/image'
 
-import LightModePortrait from '@/public/images/portrait-light-v.png'
-import DarkModePortrait from '@/public/images/portrait-dark-v.png'
+import LightModeCroppedPortrait from '@/public/images/portrait-light-v-cropped.png'
+import DarkModeCroppedPortrait from '@/public/images/portrait-dark-v-cropped.png'
 
 import { TypeAnimation } from 'react-type-animation';
 
@@ -14,7 +14,7 @@ import ThemeImg from '../common/ThemeImg'
 const WhoAmI = () => {
   return (
     <div className='flex flex-row justify-around content-center mobiles:flex-col-reverse mobiles:items-center'>
-        <div className='text-center w-7/12 mt-5 mobiles:w-5/6 mobiles:mb-3'>
+        <div className='text-center w-7/12 mt-5 mobiles:w-5/6 mobiles:mb-3 tablet:ml-2'>
             <h2 className='font-sansita font-bold text-5xl mb-6 mobile-sm:text-4xl'>Qui suis-je ?</h2>
             <TypeAnimation className='font-gentium text-lg mobile-sm:text-base' style={{whiteSpace: 'pre-line'}} 
             sequence={[`Je suis Marlène D., ravie de vous rencontrer!\nAnciennement Professeur des Écoles, j’ai choisi de me consacrer pleinement à un domaine qui m’attirait depuis longtemps : le développement web.
@@ -26,7 +26,7 @@ const WhoAmI = () => {
         </div>
         <div className='relative group -z-10'>
           <div className='w-48 h-48 rounded-full border-4 border-black dark:border-white m-12 overflow-hidden mobiles:w-28 mobiles:h-28 mobiles:m-0 mobiles:mt-6'>
-            <ThemeImg LightImage={LightModePortrait} DarkImage={DarkModePortrait} 
+            <ThemeImg LightImage={LightModeCroppedPortrait} DarkImage={DarkModeCroppedPortrait} 
                       altDark={"Portrait of Marlène.D made by herself (graphical illustration)"} altLight={"Portrait of Marlène.D made by herself (graphical illustration)"}
                       fill
                       className="w-2/3 h-2/3"/>
