@@ -1,21 +1,22 @@
 import connect from "@/lib/dbConfig";
 
-import workModel from "@/models/workModel";
+import Work from "@/models/workModel";
 
 import { NextResponse } from "next/server";
 
-export async function DELETE({params}) {
+export async function DELETE(req) {
 
-    const workId = params.id
-
+    const workId = req.url.split('/').pop()
+ 
     try{
+
         await connect()
 
-        const findWork = await workModel.findOne({_id: workId})
+        const findWork = await Work.findOne({_id: workId})
         if(!findWork){
             return NextResponse.json({ message: "Work not found!" }, { status: 400 })
         } else {
-            await workModel.deleteOne({_id: workId})
+            await Work.deleteOne({_id: workId})
             return NextResponse.json({ message: "Work deleted." }, { status: 200 })
         }
     } catch(err){
@@ -23,9 +24,9 @@ export async function DELETE({params}) {
     }
 }
 
-export async function PUT({params}) {
+export async function PUT(req) {
 
-    const workId = params.id
+    const workId = req.url.split('/').pop()
 
     try{
         await connect()

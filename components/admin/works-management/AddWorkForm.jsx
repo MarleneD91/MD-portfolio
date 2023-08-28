@@ -59,19 +59,11 @@ const AddWorkForm = () => {
       console.log(title)
     const res = await fetch("/api/works", {
       method: "POST",
-      /*headers: {
+      headers: {
         "Content-type": "multipart/form-data",
         'Accept': 'application/json'
-      },*/
+      },
       body: formData
-      /*body: JSON.stringify({
-        title,
-        description,
-        issues,
-        technos,
-        githubLink,
-        imageUrl
-      }),*/
     });
 
     if(res.status === 200){

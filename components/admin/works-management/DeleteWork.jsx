@@ -2,13 +2,16 @@ import React from 'react'
 
 import { FaTrashAlt } from 'react-icons/fa'
 
-const DeleteWork = (workId) => {
+const DeleteWork = (workInfo) => {
+
+    const workId = Object.values(workInfo)[0]
+    console.log(workId)
 
     const handleWorkDeletion = async () => {
         const confirmDeletion = confirm("Êtes vous sûr.e de vouloir supprimer ce projet ?")
     
         if(confirmDeletion){
-          const res = await fetch("api/works/" + workId,{
+          const res = await fetch("api/works/" + workId, {
             method: "DELETE",
           headers: {
             "Content-type": "application/json",

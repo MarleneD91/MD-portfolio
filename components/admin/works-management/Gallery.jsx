@@ -41,7 +41,7 @@ const Gallery = () => {
             </div>
             <hr className='w-5/6'/>
             <EditWorkForm selectedWorkId={work._id} />
-            <DeleteWork workId={work._id} />
+            <DeleteWork workInfo={work._id} />
           </div>
       )}
     </div>
