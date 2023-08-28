@@ -12,6 +12,10 @@ import Image from 'next/image'
 
 import { TbX } from "react-icons/tb"
 
+import FormData from 'form-data'
+
+
+
 const AddWorkForm = () => {
 
   const isConnected = localStorage.getItem("token")
@@ -26,8 +30,9 @@ const AddWorkForm = () => {
     const [issues, setIssues] = useState("")
     const [technos, setTechnos] = useState([])
     const [githubLink, setGithubgLink] = useState("")
-    const [imageUrl, setImageUrl] = useState();
-   
+    const [file, setFile] = useState();
+  
+
     const [success, setSuccess] = useState(false);
 
     const router = useRouter()
@@ -36,20 +41,37 @@ const AddWorkForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
+      console.log(isConnected)
+      console.log(localStorage.getItem("token"))
     if(isConnected) {
-    const res = await fetch("api/works", {
+      const formData = new FormData();
+      formData.append("title", title)
+      formData.append("description", description)
+      formData.append("issues", issues)
+      formData.append("technos", technos)
+      formData.append("githubLink", githubLink)
+
+      const fileURL = URL.createObjectURL(file)
+      formData.append("file", file, fileURL)
+
+      
+      console.log(formData)
+      console.log(title)
+    const res = await fetch("/api/works", {
       method: "POST",
-      headers: {
-        "Content-type": "application/json",
-      },
-      body: JSON.stringify({
+      /*headers: {
+        "Content-type": "multipart/form-data",
+        'Accept': 'application/json'
+      },*/
+      body: formData
+      /*body: JSON.stringify({
         title,
         description,
         issues,
         technos,
         githubLink,
         imageUrl
-      }),
+      }),*/
     });
 
     if(res.status === 200){
@@ -63,9 +85,9 @@ const AddWorkForm = () => {
   };
 } 
 
-  const handleImg = (e) =>{
+  /*const handleImg = (e) =>{
     setImageUrl(URL.createObjectURL(e.target.files[0]))
-  }
+  }*/
 
   const handleTechnos = (e) => {
     const value = e.target.value.replace(/\s+/g, '')
@@ -85,6 +107,7 @@ const AddWorkForm = () => {
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-5"
+            encType='multipart/form-data'
           >
             <div className="flex flex-col mx-4">
               <label htmlFor="title" className="w-11/12 place-self-start my-2">Nom du projet</label>
@@ -96,6 +119,7 @@ const AddWorkForm = () => {
                 placeholder="Nom du projet"
                 className="rounded-md p-1 dark:bg-dark-blue-form"
                 autoComplete="off"
+                required
               />
             </div>
             <div className="flex flex-col mx-4">
@@ -107,6 +131,7 @@ const AddWorkForm = () => {
                 placeholder="Décrivez le projet..."
                 className="rounded-md p-1 dark:bg-dark-blue-form h-28"
                 autoComplete="off"
+                required
               />
             </div>
             <div className="flex flex-col mx-4">
@@ -118,6 +143,7 @@ const AddWorkForm = () => {
                 placeholder="Quelles ont été les difficultés rencontrées ?"
                 className="rounded-md p-1 dark:bg-dark-blue-form h-24"
                 autoComplete="off"
+                required
               />
             </div>
             <div className="flex flex-col mx-4">
@@ -128,6 +154,7 @@ const AddWorkForm = () => {
               id='technos'
               placeholder='Technologies utilisées'
               autoComplete='off'
+              required
               />
             </div>
             <div className="flex flex-col mx-4">
@@ -140,15 +167,18 @@ const AddWorkForm = () => {
                 placeholder="Lien du repository Github"
                 className="rounded-md p-1 dark:bg-dark-blue-form"
                 autoComplete="off"
+                required
               />
             </div>
             <div className="flex flex-col mx-4">
-              <label htmlFor="imageUrl" className="w-11/12 place-self-start my-2">Image</label>
+              <label htmlFor="file" className="w-11/12 place-self-start my-2">Image</label>
               <input
-                onChange={handleImg}
+                onChange={(e) => setFile(e.target.files[0])}
                 type="file"
-                id="imageUrl"/>
-              {!imageUrl ? <></> : <Image src={imageUrl} width={250} height={200} alt="Image of the project" className='m-4'/>}
+                id="file"
+                required
+              />
+              {!file ? <></> : <Image src={URL.createObjectURL(file)} width={250} height={200} alt="Image of the project" className='m-4'/>}
             </div>
             
             <button className="bg-black text-white w-3/12 place-self-center px-2 pb-1 rounded-xl font-sansita font-regular" type="submit">
