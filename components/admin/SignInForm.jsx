@@ -46,7 +46,7 @@ const SignInForm = ({onLogin}) => {
         <form className="p-6 my-6 m-auto w-4/12 border border-1 border-gray-300 dark:border-gray-500 rounded-[35px] bg-light-gray-form dark:bg-dark-gray-form flex flex-col items-center gap-6" 
               onSubmit={checkUser}>
         <div className="flex flex-col mx-4">
-          <label htmlFor="user" className="text-center my-2">Identifiant</label>
+          <label htmlFor="username" className="text-center my-2">Identifiant</label>
           <input
             onChange={(e) => setUsername(e.target.value)}
             value={username}
