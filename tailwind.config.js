@@ -36,8 +36,8 @@ module.exports = {
         'mobile-sm': {'min' : '320px', 'max' : '380px'},
         'mobile': {'min': '381px', 'max' : '580px'},
         'tablet': {'min': '581px', 'max' : '767px'},
-        'sm-devices': {'max': '850px'},
-        'mobiles': {'max': '580px'}
+        'sm-devices': {'max': '880px'},
+        'mobiles': {'max': '580px'},
       }
     },
   },
