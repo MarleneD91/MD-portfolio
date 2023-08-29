@@ -13,7 +13,8 @@ const HomeAnimatedText = () => {
               <p className='font-gentium text-lg'>
               Je suis Marlène, <span className='font-bold'>développeuse web junior</span>. Je vous présente mon 
               <span className='font-bold'> parcours</span>, mes <span className='font-bold'>réalisations</span>, 
-              les <span className='font-bold'>technologies</span> avec lesquelles j’ai pu travailler jusqu’à présent. 
+              les <span className='font-bold'>technologies</span> avec lesquelles j’ai eu l'opportunité de 
+              travailler jusqu’à présent. 
               </p>
               <p className='font-roboto italic text-gray-txt dark:text-dark-footer-txt text-sm pt-6'>N'hésitez pas à vous balader ...</p>
             </div>
