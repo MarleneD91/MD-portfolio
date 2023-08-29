@@ -1,10 +1,8 @@
-import React from 'react'
-
 import Navbar from './Navbar'
 
 import ThemeImg from '../ThemeImg'
-import BlackLogo from '@/public/images/dark-logo.png'
-import WhiteLogo from '@/public/images/white-logo.png'
+import BlackLogo from '@/public/images/dark-logo.webp'
+import WhiteLogo from '@/public/images/white-logo.webp'
 
 const Header = () => {
   return (

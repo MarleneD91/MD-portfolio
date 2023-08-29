@@ -3,8 +3,8 @@ import React from 'react'
 import Header from '@/components/common/Header/Header'
 import Footer from '@/components/common/Footer/Footer'
 
-import Black404 from '@/public/images/404-black-ivy.png'
-import White404 from '@/public/images/404-white-ivy.png'
+import Black404 from '@/public/images/404-black-ivy.webp'
+import White404 from '@/public/images/404-white-ivy.webp'
 
 import ThemeImg from '@/components/common/ThemeImg'
 

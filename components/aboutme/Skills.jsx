@@ -1,15 +1,13 @@
 "use client"
 
-import React from 'react'
-
 import Image from 'next/image'
 
 import {Slide} from 'react-awesome-reveal'
 
 import { FaBook, FaPalette, FaPagelines } from 'react-icons/fa'
 
-import RightGingkoLeaf from '@/public/images/right-gingko-leaf.png'
-import LeftGingkoLeaf from '@/public/images/left-gingko-leaf.png'
+import RightGingkoLeaf from '@/public/images/right-gingko-leaf.webp'
+import LeftGingkoLeaf from '@/public/images/left-gingko-leaf.webp'
 
 
 const Skills = () => {

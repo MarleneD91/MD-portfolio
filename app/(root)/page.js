@@ -1,11 +1,15 @@
+//Common
 import Header from '@/components/common/Header/Header'
 import Footer from '@/components/common/Footer/Footer'
 
+//main Components
 import HomeAnimatedText from '@/components/home/HomeAnimatedText'
-
-import Cactus from '@/public/images/Cactus.png'
-import Magnolia from '@/public/images/Magnolia.png'
 import ThemeImg from '@/components/common/ThemeImg'
+
+//Illustrations
+import Cactus from '@/public/images/Cactus.webp'
+import Magnolia from '@/public/images/Magnolia.webp'
+
 
 export default function Home() {
   return (

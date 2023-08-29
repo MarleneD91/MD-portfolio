@@ -8,9 +8,9 @@ import{Fade} from 'react-awesome-reveal'
 import Image from 'next/image'
 
 //Universities logos
-import UJF from '@/public/universities/Joseph-Fourier.png'
-import ParisDiderot from '@/public/universities/Paris-Diderot.png'
-import OPC from '@/public/universities/OpenClassrooms.png'
+import UJF from '@/public/universities/Joseph-Fourier.webp'
+import ParisDiderot from '@/public/universities/Paris-Diderot.webp'
+import OPC from '@/public/universities/OpenClassrooms.webp'
 
 //Font Awesome Icon
 import { FaCircle } from "react-icons/fa";
