@@ -1,5 +1,3 @@
-//ADD WORK FORM FIRST
-
 "use client"
 
 import React from 'react'
@@ -17,74 +15,58 @@ import { FaPencilAlt } from "react-icons/fa"
 
 
 
-const AddWorkForm = (selectedWorkId) => {
 
-  const workId = selectedWorkId
+const AddWorkForm = (props) => {
 
-  const [editWorkModal, setEditWorkModal] = useState(false)
-  const openEditModal = () => {
-    setEditWorkModal(true)
-  }
-  const closeEditModal = () => {
-    setEditWorkModal(false)
-  }
+  const workId = props.workId
 
   const isConnected = localStorage.getItem("token")
   
-  const getOldData = async(e) => {
-    const res = async () => {
-      if(isConnected){
-        const res = await fetch("api/works" + workId, {
-          method: "GET",
-          headers: {
-            "Content-type": "application/json",
-          }
-        })
-      }
-      return res.json()
-    }
-  }
-  
-  const oldTechnos = getOldData.technos
-  //.toString()
-
-  const [title, setTitle] = useState(getOldData.title);
-  const [description, setDescription] = useState(getOldData.description)
-  const [issues, setIssues] = useState(getOldData.issues)
-  const [technos, setTechnos] = useState(oldTechnos)
-  const [githubLink, setGithubgLink] = useState(getOldData.githubLink)
-  const [imageUrl, setImageUrl] = useState(getOldData.imageUrl);
+  const [title, setTitle] = useState(props.workTitle);
+  const [description, setDescription] = useState(props.workDescription)
+  const [issues, setIssues] = useState(props.workIssues)
+  const [technos, setTechnos] = useState(props.workTechnos)
+  const [githubLink, setGithubgLink] = useState(props.workGit)
+  const imageUrl = props.workImage;
+  const [file, setFile] = useState()
    
   const [success, setSuccess] = useState(false);
 
   const router = useRouter()
 
-
+  const [editWorkModal, setEditWorkModal] = useState(false)
+  const openEditModal = () => {
+    setEditWorkModal(true)
+  }  
+  const closeEditModal = () => {
+    setEditWorkModal(false)
+  }
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     
-
     if(isConnected){
-      const res = await fetch("api/works", {
+      const formData = new FormData();
+      formData.append("title", title)
+      formData.append("description", description)
+      formData.append("issues", issues)
+      formData.append("technos", technos)
+      formData.append("githubLink", githubLink)
+      formData.append("imageUrl", imageUrl)
+      if(file) {
+        const fileURL = URL.createObjectURL(file)
+        formData.append("file", file, fileURL)
+      }
+
+      const res = await fetch("api/works/" + workId, {
         method: "PUT",
-        headers: {
-          "Content-type": "application/json",
-        },
-        body: JSON.stringify({
-          title,
-          description,
-          issues,
-          technos,
-          githubLink,
-          imageUrl
-        }),
+        body: formData
       });
 
       if(res.status === 200){
         setSuccess(true);
         alert("Work updated!")   
-        router.push('/admin')
+        setEditWorkModal(false)
       } else {
         alert("Something went wrong while updating the project.")
       }
@@ -93,14 +75,12 @@ const AddWorkForm = (selectedWorkId) => {
     }
   }
 
-  const handleImg = (e) =>{
-    setImageUrl(URL.createObjectURL(e.target.files[0]))
-  }
 
   const handleTechnos = (e) => {
     const value = e.target.value
     setTechnos(value.split(','))
   }
+
   return (
     <>
       <div className='flex flex-row text-l mt-2 items-center' onClick={openEditModal}>
@@ -124,10 +104,9 @@ const AddWorkForm = (selectedWorkId) => {
                 <label htmlFor="title" className="w-11/12 place-self-start my-2">Nom du projet</label>
                 <input
                   onChange={(e) => setTitle(e.target.value)}
-                  value={title}
+                  defaultValue={title}
                   type="text"
                   id="title"
-                  placeholder={getOldData.title}
                   className="rounded-md p-1 dark:bg-dark-blue-form"
                   autoComplete="off"
                 />
@@ -136,9 +115,8 @@ const AddWorkForm = (selectedWorkId) => {
                 <label htmlFor="description" className="w-11/12 place-self-start my-2">Description</label>
                 <textarea
                   onChange={(e) => setDescription(e.target.value)}
-                  value={description}
+                  defaultValue={description}
                   id="description"
-                  placeholder={getOldData.description}
                   className="rounded-md p-1 dark:bg-dark-blue-form h-28"
                   autoComplete="off"
                 />
@@ -147,9 +125,8 @@ const AddWorkForm = (selectedWorkId) => {
                 <label htmlFor="issues" className="w-11/12 place-self-start my-2">Difficultées rencontrées</label>
                 <textarea
                   onChange={(e) => setIssues(e.target.value)}
-                  value={issues}
+                  defaultValue={issues}
                   id="issues"
-                  placeholder={getOldData.description}
                   className="rounded-md p-1 dark:bg-dark-blue-form h-24"
                   autoComplete="off"
                 />
@@ -158,9 +135,8 @@ const AddWorkForm = (selectedWorkId) => {
                 <label htmlFor='technos' className='w-11/12 place-self-start my-2'>Technologies utilisées</label>
                 <input
                 onChange={handleTechnos}
-                value={technos}
+                defaultValue={technos}
                 id='technos'
-                placeholder={oldTechnos}
                 autoComplete='off'
                 />
               </div>
@@ -168,10 +144,9 @@ const AddWorkForm = (selectedWorkId) => {
                 <label htmlFor="githubLink" className="w-11/12 place-self-start my-2">Lien Github</label>
                 <input
                   onChange={(e) => setGithubgLink(e.target.value)}
-                  value={githubLink}
+                  defaultValue={githubLink}
                   type="url"
                   id="githubLink"
-                  placeholder={getOldData.githubLink}
                   className="rounded-md p-1 dark:bg-dark-blue-form"
                   autoComplete="off"
                 />
@@ -179,10 +154,10 @@ const AddWorkForm = (selectedWorkId) => {
               <div className="flex flex-col mx-4">
                 <label htmlFor="imageUrl" className="w-11/12 place-self-start my-2">Image</label>
                 <input
-                  onChange={handleImg}
+                  onChange={(e) => setFile(e.target.files[0])}
                   type="file"
                   id="imageUrl"/>
-                {!imageUrl ? <Image src={getOldData.imageUrl} width={250} height={200} alt="Image of the project"/> : <Image src={imageUrl} width={250} height={200} alt="Image of the project"/>}
+                {file ? <Image src={URL.createObjectURL(file)} width={250} height={200} alt="Image of the project"/> : <Image src={imageUrl} width={250} height={200} alt="Image of the project"/>}
               </div>
               
               <button className="bg-black text-white w-3/12 place-self-center px-2 pb-1 mb-4 rounded-xl font-sansita font-regular" type="submit">

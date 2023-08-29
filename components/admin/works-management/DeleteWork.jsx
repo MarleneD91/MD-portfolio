@@ -1,24 +1,35 @@
+"use client"
+
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 import { FaTrashAlt } from 'react-icons/fa'
 
 const DeleteWork = (workInfo) => {
 
-    const workId = Object.values(workInfo)[0]
-    console.log(workId)
+  const router = useRouter()
+  
+  const workId = Object.values(workInfo)[0]
 
-    const handleWorkDeletion = async () => {
-        const confirmDeletion = confirm("Êtes vous sûr.e de vouloir supprimer ce projet ?")
+  const handleWorkDeletion = async () => {
+    const confirmDeletion = confirm("Êtes vous sûr.e de vouloir supprimer ce projet ?")
     
-        if(confirmDeletion){
-          const res = await fetch("api/works/" + workId, {
-            method: "DELETE",
-          headers: {
-            "Content-type": "application/json",
-          },
-          })
-        }
+    if(confirmDeletion){
+      const res = await fetch("api/works/" + workId, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json",
+        },
+      })
+
+      if(res.status === 200){
+        alert("Work deleted!") 
+        router.push("/admin")
+      } else {
+        alert("Something went wrong while creating the project.")
       }
+    };
+  }
 
   return (          
     <div className='flex flex-row text-l mt-2 items-center' onClick={handleWorkDeletion}>

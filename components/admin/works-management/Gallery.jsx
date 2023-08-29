@@ -40,7 +40,7 @@ const Gallery = () => {
               {work.description}
             </div>
             <hr className='w-5/6'/>
-            <EditWorkForm selectedWorkId={work._id} />
+            <EditWorkForm workId={work._id} workTitle={work.title} workDescription={work.description} workIssues={work.issues} workTechnos={work.technos} workGit={work.githubLink} workImage={work.imageUrl}  />
             <DeleteWork workInfo={work._id} />
           </div>
       )}
