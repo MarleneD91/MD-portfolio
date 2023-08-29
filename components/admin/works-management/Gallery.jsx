@@ -31,9 +31,9 @@ const Gallery = () => {
    }, [])
 
   return (
-    <div className='grid grid-cols-3 grid-rows-2 w-full h-auto justify-self-center'>
+    <div className='grid grid-cols-3 grid-rows-2 w-full h-auto justify-self-center p-2'>
       {works && works.map(work =>
-            <div className='w-5/6 h-5/6 m-4  bg-light-gray-form dark:bg-dark-gray-form p-4 rounded-md' key={work._id}>
+            <div className='w-5/6 h-auto m-4  bg-light-gray-form dark:bg-dark-gray-form p-4 rounded-md' key={work._id}>
             <Image src={work.imageUrl} height={300} width={300} alt={work.title} className='h-1/2 w-full object-cover mb-3' />
             <hr className='w-5/6'/>
             <div className='text-xs my-3 line-clamp-3'>
