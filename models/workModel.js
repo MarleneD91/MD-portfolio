@@ -18,7 +18,6 @@ const workSchema = new mongoose.Schema({
     },
     githubLink: {
         type: String,
-        required: true
     },
     imageUrl: {
         type: String,
