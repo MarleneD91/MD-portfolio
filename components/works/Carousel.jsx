@@ -1,14 +1,11 @@
 "use client"
 
 import Image from "next/image";
+
 import { useEffect, useState } from "react";
 
-
+//FA Icons
 import { FaChevronLeft, FaChevronRight, FaCircle, FaGithub } from 'react-icons/fa'
-
-
-
-
 
 const Carousel = () => {
 
@@ -16,12 +13,20 @@ const Carousel = () => {
  
   const [currentSlide, setCurrentSlide] = useState(0);
 
-
   useEffect(()=>{    
    getWorksData()
   }, [])
 
- 
+  const getWorksData = async () => {
+    const res = await fetch('../api/works',{
+      method: 'GET',
+      headers: {
+        "Content-type": "application/json",
+      },
+    })
+    const resData = await res.json()
+    setWorks(resData)
+  }
 
   const handleNextSlide = () => {
     let newSlide = currentSlide === works.length - 1 ? 0 : currentSlide + 1;
@@ -33,18 +38,6 @@ const Carousel = () => {
     setCurrentSlide(newSlide);
   };
 
-const getWorksData = async () => {
-  const res = await fetch('../api/works',{
-    method: 'GET',
-    headers: {
-      "Content-type": "application/json",
-    },
-  })
-  const resData = await res.json()
-  console.log(resData)
-  setWorks(resData)
-  console.log(works)
-}
   return (
     <div className="flex flex-col justify-center w-1/2 mb-8 mobiles:w-11/12 mobiles:mb-4">
       <div className="flex flex-row">
@@ -53,7 +46,7 @@ const getWorksData = async () => {
           {works && works.map((work, index) => {
               if (index === currentSlide) {
                 return (
-                  <Image key={work.title} src={work.imageUrl} width={500} height={300} className="opacity-75 hover:opacity-100 rounded-sm h-full w-full object-cover mobile:w-[300px] mobile-sm:w-[175px]" alt={work.title} />
+                  <Image key={work.title} src={work.imageUrl} width={500} height={300} className="opacity-75 hover:opacity-100 rounded-sm h-full w-full object-cover mobile:w-[300px] mobile-sm:w-[175px]" alt={`Screenshot of the project: ${work.title}`} />
                 )
               }
             })}

@@ -1,8 +1,6 @@
 "use client"
 
-import React from 'react'
-
-import { ThemeProvider } from 'next-themes'
+import { ThemeProvider } from 'next-themes' //For dark/light mode
 import { useState, useEffect } from 'react'
 
 const Providers = ({children}) => {

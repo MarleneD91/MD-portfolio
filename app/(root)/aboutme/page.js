@@ -1,8 +1,8 @@
-import React from 'react'
-
+//Common
 import Header from '@/components/common/Header/Header'
 import Footer from '@/components/common/Footer/Footer'
 
+//Main components
 import WhoAmI from '@/components/aboutme/WhoAmI'
 import Skills from '@/components/aboutme/Skills'
 import Curriculum from '@/components/aboutme/Curriculum'

@@ -2,14 +2,15 @@
 
 import Image from 'next/image'
 
+//Common
 import Header from '@/components/common/Header/Header'
 import Footer from '@/components/common/Footer/Footer'
 
 //Illustrations
-import LeftSakura from '@/public/images/left-sakura.png'
-import RightSakura from '@/public/images/right-sakura.png'
+import LeftSakura from '@/public/images/left-sakura.webp'
+import RightSakura from '@/public/images/right-sakura.webp'
 
-//<main> components
+//main components
 import Carousel from '@/components/works/Carousel'
 import WhatIUse from '@/components/works/WhatIUse'
 

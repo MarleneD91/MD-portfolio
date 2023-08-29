@@ -1,20 +1,18 @@
 import connect from "@/lib/dbConfig"; // Connection to db
 
-import workModel from "@/models/workModel";
+import Work from "@/models/workModel";
 
 import { NextResponse } from "next/server";
 
 import mime from "mime";
 import { join } from "path";
 import { stat, mkdir, writeFile } from "fs/promises";
-import { headers } from "next/dist/client/components/headers";
-
 
 export async function GET() {
     try {
         await connect()
 
-        const works = await workModel.find()
+        const works = await Work.find()
 
         return NextResponse.json(works)
 
@@ -50,19 +48,14 @@ export async function POST(req) {
     }
 
     try {
-      const filename = `${data.get("title")}.${mime.getExtension(file.type)}`;
+      const filename = `Project-${data.get("title")}.${mime.getExtension(file.type)}`;
       await writeFile(`${uploadDir}/${filename}`, buffer);
 
       const imageUrl = `${relativeUploadDir}/${filename}`
-      const title = data.get('title')
-      const description = data.get('description')
-      const issues = data.get('issues')
-      const technos = data.get('technos').split(',')
-      const githubLink = data.get('githubLink')
 
       const newWork = {title, description, issues, technos, githubLink, imageUrl: imageUrl}
         
-      await workModel.create({
+      await Work.create({
         ...newWork
       })
             
@@ -80,9 +73,8 @@ export async function POST(req) {
   }
 }
 
-exports.config = {
+/*exports.config = {
   api: {
       bodyParser: false,
   },
-};
-
+};*/

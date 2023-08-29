@@ -13,6 +13,7 @@ import Image from 'next/image'
 import { TbX } from "react-icons/tb"
 
 import FormData from 'form-data'
+import { useEffect } from 'react'
 
 
 
@@ -32,7 +33,6 @@ const AddWorkForm = () => {
     const [githubLink, setGithubgLink] = useState("")
     const [file, setFile] = useState();
   
-
     const [success, setSuccess] = useState(false);
 
     const router = useRouter()
@@ -54,32 +54,21 @@ const AddWorkForm = () => {
       const fileURL = URL.createObjectURL(file)
       formData.append("file", file, fileURL)
 
-      
-      console.log(formData)
-      console.log(title)
+
     const res = await fetch("/api/works", {
       method: "POST",
-      headers: {
-        "Content-type": "multipart/form-data",
-        'Accept': 'application/json'
-      },
       body: formData
     });
 
     if(res.status === 200){
       setSuccess(true);
-      alert("Work added!")    
-      router.push("/admin")
+      alert("Work added!") 
       setAddWorkModal(false)
     } else {
       alert("Something went wrong while creating the project.")
     }
   };
 } 
-
-  /*const handleImg = (e) =>{
-    setImageUrl(URL.createObjectURL(e.target.files[0]))
-  }*/
 
   const handleTechnos = (e) => {
     const value = e.target.value.replace(/\s+/g, '')

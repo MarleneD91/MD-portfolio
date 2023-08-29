@@ -1,5 +1,3 @@
-import React from 'react'
-
 //Font Awesome pdf icon
 import { FaFilePdf } from 'react-icons/fa'
 

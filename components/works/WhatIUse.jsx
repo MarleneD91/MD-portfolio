@@ -1,5 +1,3 @@
-import React from 'react'
-
 const WhatIUse = ({elements, categoryName}) => {
     return (
         <div className='flex flex-row mb-6 ml-6 tablet:flex-col tablet:ml-0 mobiles:flex-col mobiles:mx-2 mobiles:mb-2'>
