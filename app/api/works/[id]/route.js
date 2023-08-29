@@ -41,11 +41,9 @@ export async function PUT(req) {
         const technos = data.get('technos').split(',')
         const githubLink = data.get('githubLink')
         const oldImageUrl = data.get("imageUrl")
-  
+        const file = data.get("file")
 
         await connect()
-
-        const file = data.get("file")
 
         if(file){
             
@@ -73,7 +71,8 @@ export async function PUT(req) {
                 }
             }
             try {
-                const filename = `${data.get("title")}.${mime.getExtension(file.type)}`;
+                const filenameReplace = data.get("title").split(' ').join('-')
+                const filename = `Project-${filenameReplace}.${mime.getExtension(file.type)}`;
                 await writeFile(`${uploadDir}/${filename}`, buffer);
           
                 const imageUrl = `${relativeUploadDir}/${filename}`
@@ -96,11 +95,11 @@ export async function PUT(req) {
             }
         } else {
             const findWork = await Work.findOne({_id: workId})
-            const workData = {title, description, issues, technos, githubLink, imageUrl}
+            const workData = {title, description, issues, technos, githubLink, oldImageUrl}
             if(!findWork){
                 return NextResponse.json({ message: "Work not found!" }, { status: 400 })
             } else {
-                await Work.updateOne({_id: workId}, ...workData )
+                await Work.updateOne({_id: workId}, workData )
                 return NextResponse.json({ message: "Work updated." }, { status: 200 })
             }
         }
