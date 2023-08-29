@@ -79,7 +79,7 @@ const AddWorkForm = () => {
     <>
     {addWorkModal ?
       <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
-        <div className='relative max-h-fit mt-36 pt-12 p-6 mb-6 mx-auto  w-6/12  flex flex-col z-60'>
+        <div className='relative max-h-fit mt-36 pt-12 p-6 mb-6 mx-auto  w-8/12  flex flex-col z-60'>
           <div className="flex flex-col p-8 mt-48 border border-1 border-gray-300 dark:border-gray-500 rounded-[35px] bg-light-gray-form dark:bg-dark-gray-form">
           <div className='flex flex-row m-2 mb-6 items-center justify-between'>
             <h2 className='text-2xl font-sansita w-full text-center'>Ajouter un projet</h2>
@@ -88,7 +88,6 @@ const AddWorkForm = () => {
           <form
             onSubmit={handleSubmit}
             className="flex flex-col gap-5"
-            encType='multipart/form-data'
           >
             <div className="flex flex-col mx-4">
               <label htmlFor="title" className="w-11/12 place-self-start my-2">Nom du projet</label>
@@ -148,7 +147,6 @@ const AddWorkForm = () => {
                 placeholder="Lien du repository Github"
                 className="rounded-md p-1 dark:bg-dark-blue-form"
                 autoComplete="off"
-                required
               />
             </div>
             <div className="flex flex-col mx-4">
