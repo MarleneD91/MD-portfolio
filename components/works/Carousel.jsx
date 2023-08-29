@@ -67,23 +67,23 @@ const Carousel = () => {
               <h3 className="font-sansita font-semibold text-2xl tracking-wide text-center">{work.title}</h3>
               <div className="my-4">
               <h4 className="font-sansita text-base underline underline-offset-2">Description du projet</h4>
-                <p className="font-gentium text-sm mobile-sm:text-[13px]">{work.description}</p>
+                <p className="font-gentium text-justify text-base mobile-sm:text-[13px]">{work.description}</p>
               </div>
               <div className="my-6">
                 <h4 className="font-sansita text-base underline underline-offset-2">Diffultés rencontrées</h4>
-                <p className="font-gentium text-sm mobile-sm:text-[13px]">{work.issues}</p>
+                <p className="font-gentium text-justify text-base mobile-sm:text-[13px]">{work.issues}</p>
               </div>
               <div className="flex justify-between items-end">
-                <ul>
+                <ul className="flex flex-row flex-wrap">
                   {work.technos.map((techno) => {
                     if(index===currentSlide){
                       return(
-                        <li className="font-roboto font-extrabold mx-2 inline text-sm mobile-sm:text-[12px]" key={techno}>#{techno}</li>
+                        <li className="font-roboto font-bold mx-2 inline text-base mobile-sm:text-[12px]" key={techno}>#{techno}</li>
                       )
                     }
                   })}
                 </ul>
-                <a href={work.githubLink}><FaGithub className="text-4xl" /></a>
+                {work.githubLink ? <a href={work.githubLink}><FaGithub className="text-4xl" /></a> : <></>}
               </div>  
             </div>
           )
