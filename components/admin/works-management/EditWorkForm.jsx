@@ -37,6 +37,7 @@ const AddWorkForm = (props) => {
   const [editWorkModal, setEditWorkModal] = useState(false)
   const openEditModal = () => {
     setEditWorkModal(true)
+    setSuccess(false)
   }  
   const closeEditModal = () => {
     setEditWorkModal(false)
@@ -90,7 +91,7 @@ const AddWorkForm = (props) => {
       <>
         {editWorkModal ?
         <div className="flex justify-center items-center overflow-x-hidden overflow-y-auto fixed inset-0 z-50">
-          <div className='relative max-h-fit mt-60 pt-12 p-6 mb-6 mx-auto  w-6/12  flex flex-col z-60'>
+          <div className='relative max-h-fit mt-60 pt-12 p-6 mb-6 mx-auto  w-8/12  flex flex-col z-60'>
             <div className="flex flex-col p-6 mt-72 border border-1 border-gray-300 dark:border-gray-500 rounded-[35px] bg-light-gray-form dark:bg-dark-gray-form">
             <div className='flex flex-row mb-6 items-center justify-between'>
               <h2 className='text-2xl font-sansita w-full text-center'>Modifier un projet</h2>
