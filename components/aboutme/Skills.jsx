@@ -46,14 +46,6 @@ const Skills = () => {
                 </Slide>
               </div>
             </div>
-            <div className='flex flex-col items-center mt-10'>
-              <h3 className='font-sansita font-semibold text-xl tracking-widest my-4 mobiles:my-2 mobile-sm:text-lg'>HOBBIES</h3>
-              <div className='flex flex-row justify-between text-4xl mt-2 mobile:text-3xl mobile-sm:text-2xl'>
-                <FaBook className='m-2'/>
-                <FaPalette className='m-2'/>
-                <FaPagelines className='m-2'/>
-              </div>
-            </div>
           </div>
           <Image src={RightGingkoLeaf} width={250} alt='Drawing of a Gingko biloba leaf' className='h-auto justify-self-end'/>
         </div> 
