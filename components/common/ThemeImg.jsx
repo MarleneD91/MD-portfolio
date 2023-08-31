@@ -10,11 +10,11 @@ export const ThemeImg = ({LightImage, DarkImage, height, width, altLight, altDar
     const {theme, setTheme} = useTheme()
         if(theme === "dark"){
             return (
-                <Image src={DarkImage} height={height} width={width} alt={altLight} priority={true} className='object-cover'/>
+                <Image src={DarkImage} height={height} width={width} alt={altLight} priority={false} className='object-cover'/>
             )
             } else {
             return(
-                <Image src={LightImage} height={height} width={width} alt={altDark} priority={true} className='object-cover'/> 
+                <Image src={LightImage} height={height} width={width} alt={altDark} priority={false} className='object-cover'/> 
             )
         }
         

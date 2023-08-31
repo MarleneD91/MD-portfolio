@@ -2,18 +2,14 @@
 
 "use client"
 
-import React from 'react'
-
-import { useState } from 'react'
-
-import { useRouter } from 'next/navigation'
+import { useState, useEffect } from 'react'
 
 import Image from 'next/image'
 
 import { TbX } from "react-icons/tb"
 
 import FormData from 'form-data'
-import { useEffect } from 'react'
+
 
 
 
