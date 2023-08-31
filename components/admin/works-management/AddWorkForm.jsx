@@ -18,8 +18,10 @@ import { useEffect } from 'react'
 
 
 const AddWorkForm = () => {
-
-  const isConnected = localStorage.getItem("token")
+  const [isConnected, setIsConnected] = useState()
+  useEffect(() => {
+    setIsConnected(localStorage.getItem("token"))
+  })
 
   const [addWorkModal, setAddWorkModal] = useState(true)
   const closeModal = () => {
@@ -34,8 +36,6 @@ const AddWorkForm = () => {
     const [file, setFile] = useState();
   
     const [success, setSuccess] = useState(false);
-
-    const router = useRouter()
 
   
   const handleSubmit = async (e) => {

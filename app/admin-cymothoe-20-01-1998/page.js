@@ -5,15 +5,20 @@ import SignInForm from '@/components/admin/SignInForm'
 import Dashboard from '@/components/admin/Dashboard'; // If admin is logged
 
 import { useRouter } from 'next/navigation';
+import { useEffect } from 'react';
 
 const Admin = () => {
-
+  const [isConnected, setIsConnected] = useState()
   const router = useRouter()
 
-  const isConnected = localStorage.getItem("token")
+  useEffect(() => {
+    setIsConnected(localStorage.getItem("token"))
+  })
 
   function handleLogout(){
-    localStorage.clear()
+    if (typeof window !== "undefined" && window.localStorage){
+      localStorage.clear()
+    }
     router.push('/')
   }
 

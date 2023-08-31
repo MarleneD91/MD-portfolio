@@ -36,7 +36,9 @@ const SignInForm = ({onLogin}) => {
           setPassword("");
           const token = cookieCutter.get("token")
           console.log(token)
-          localStorage.setItem("token", token)
+          if (typeof window !== "undefined" && window.localStorage){
+            localStorage.setItem("token", token)
+          }
           router.refresh()
         } else {
           alert("Connection failed.")

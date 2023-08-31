@@ -20,7 +20,10 @@ const AddWorkForm = (props) => {
 
   const workId = props.workId
 
-  const isConnected = localStorage.getItem("token")
+  const [isConnected, setIsConnected] = useState()
+  useEffect(() => {
+    setIsConnected(localStorage.getItem("token"))
+  })
   
   const [title, setTitle] = useState(props.workTitle);
   const [description, setDescription] = useState(props.workDescription)
