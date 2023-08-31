@@ -1,6 +1,6 @@
 "use client"
 
-import React from 'react'
+import { useEffect, useState } from 'react'
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
@@ -8,10 +8,15 @@ import { usePathname } from 'next/navigation'
 import { FaHome, FaInfo, FaLaptopCode, FaEnvelope } from 'react-icons/fa'
 
 const Navbar = () => {
+  const [screenSize, setScreensize] = useState(1240)
   const currentRoute = usePathname();
   const regularStyle = 'px-6 tablet:px-3 mobile:p-2 mobiles:mx-4 mobile-sm:px-1 mobile-sm:mx-3 mobiles:flex mobiles:flex-col mobiles:items-center mobiles:justify-end'
   const activeLink = regularStyle + ' underline underline-offset-8 mobiles:no-underline mobiles:border-x-[1.5px] border-black dark:border-white';
-  const screenSize = window.innerWidth
+  
+  useEffect(() =>{
+  setScreensize(window.innerWidth)
+  })
+
     return (
     <nav className='font-sansita font-bold text-[25px] flex justify-between tracking-wider p-4 pr-0 tablet:text-xl tablet:p-3 tablet:w-auto mobile:text-[24px] mobile:p-1 mobile-sm:mt-2 mobile-sm:text-[22px] mobile-sm:p-[2px]'>
         <Link href="/" className={currentRoute === '/' ? activeLink : regularStyle}>
