@@ -9,7 +9,7 @@ import { FaChevronLeft, FaChevronRight, FaCircle, FaGithub } from 'react-icons/f
 
 const Carousel = () => {
 
-  const [works, setWorks] = useState(null)
+  const [works, setWorks] = useState()
  
   const [currentSlide, setCurrentSlide] = useState(0);
 
@@ -43,6 +43,7 @@ const Carousel = () => {
       <div className="flex flex-row">
         <FaChevronLeft onClick={handlePrevSlide} className=" text-5xl sm-devices:text-4xl mobile:text-3xl mobile-sm:text-2xl cursor-pointer text-gray-400 place-self-center z-20 ml-2 hover:text-gray-500 mobile-sm:ml-0" />
         <div className="h-[250px] overflow-hidden m-auto place-content-center sm-devices:h-[180px] mobile:h-[220px] mobile-sm:h-[200px]">
+          
           {works && works.map((work, index) => {
               if (index === currentSlide) {
                 return (
@@ -78,14 +79,14 @@ const Carousel = () => {
                   {work.technos.map((techno) => {
                     if(index===currentSlide){
                       return(
-                        <li className="font-roboto font-bold mx-2 inline text-base mobile-sm:text-[12px]" key={techno}>#{techno}</li>
+                        <li className="font-roboto font-bold mx-2 inline text-base mobile-sm:text-[12px]" key={`${work.title} + ${techno}`}>#{techno}</li>
                       )
                     }
                   })}
                 </ul>
                 {work.githubLink ? <a href={work.githubLink}><FaGithub className="text-4xl" /></a> : <></>}
-              </div>  
-            </div>
+              </div> 
+             </div>
           )
         }
       })}
