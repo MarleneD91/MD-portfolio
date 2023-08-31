@@ -1,11 +1,11 @@
 "use client"
 
 import { useRouter } from 'next/navigation';
-import React from 'react'
-
-
 
 import { useState } from "react";
+
+
+import cookieCutter from '@boiseitguru/cookie-cutter';
 
 
 const SignInForm = ({onLogin}) => {
@@ -29,15 +29,18 @@ const SignInForm = ({onLogin}) => {
           }),
         });
 
-
+        
         if(res.status === 200){
           setSuccess(true);
           setUsername("");
           setPassword("");
-          localStorage.setItem("token", res.token)
+          const token = cookieCutter.get("token")
+          console.log(token)
+          localStorage.setItem("token", token)
           router.refresh()
         } else {
           alert("Connection failed.")
+          setSuccess(false)
         }
     }
 
