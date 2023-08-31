@@ -32,7 +32,7 @@ const roboto = Roboto ({
 
 export const metadata = {
   title: 'Portfolio of Marlène Diaz, front web developer',
-  description: 'This portfolio shows the work of Marlene Diaz, frontend web developer. ',
+  description: 'This portfolio shows the work of Marlène Diaz, frontend web developer.',
 }
 
 export default function RootLayout({ children }) {
