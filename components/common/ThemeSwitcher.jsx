@@ -19,7 +19,7 @@ const ThemeSwitcher = () => {
         <FaMoon className='hidden dark:block place-self-center mr-2 text-3xl text-moon mobiles:hidden'/>
         {screenSize < 581 ? <FaSun className='dark:hidden place-self-center ml-2 text-3xl text-sun mobiles:z-10  mobiles:m-[1px]'/> : null}
         {screenSize < 581 ? <FaMoon className='hidden place-self-center mr-2 text-3xl text-moon  mobiles:z-10 mobiles:mr-0 mobiles:ml-2'/> : null}
-        <button onClick={ screenSize > 580 ? ()=> setTheme( theme === "dark"? "light": "dark" ) : null} className='rounded-full h-10 w-10 bg-black dark:bg-switcher-button-white z-10 mobiles:hidden'></button>
+        <button onClick={ screenSize > 580 ? ()=> setTheme( theme === "dark"? "light": "dark" ) : null} className='rounded-full h-10 w-10 bg-black dark:bg-switcher-button-white z-10 mobiles:hidden' id="theme-switcher" aria-label='theme-switcher'></button>
       </div>
     </div>
   )

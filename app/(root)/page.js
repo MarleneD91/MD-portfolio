@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <div className='flex flex-col h-screen justify-between'>
       <Header/>
-        <main >
+        <main className="w-screen" >
           <div className='flex flex-col items-center justify-between'>
             <HomeAnimatedText/>
             <div className='group relative m-5 flex justify-center'>

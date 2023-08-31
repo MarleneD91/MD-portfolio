@@ -17,7 +17,7 @@ const contactSchema = new mongoose.Schema({
     message: {
         type: String,
         required: [true, "Don't hesitate to tell me what you need!"],
-        minlength: [60, "I need some details to answer!"]
+        minlength: [40, "I need some details to answer!"]
     },
     date: {
         type: Date,
