@@ -5,7 +5,7 @@ import SignInForm from '@/components/admin/SignInForm'
 import Dashboard from '@/components/admin/Dashboard'; // If admin is logged
 
 import { useRouter } from 'next/navigation';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 const Admin = () => {
   const [isConnected, setIsConnected] = useState()
