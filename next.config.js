@@ -6,8 +6,11 @@ const nextConfig = {
   },
   images: {
     deviceSizes: [320, 380, 580, 767, 880, 1240, 1920],
-    imageSizes:  [32,  64,  96,  128,   256],
-}
+    imageSizes:  [32,  64,  96,  128,   256]
+  },
+  experimental: { 
+    nftTracing: true 
+  }
   }
 
 module.exports = nextConfig
