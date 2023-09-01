@@ -11,6 +11,10 @@ import CV from '@/components/aboutme/CV'
 //Font Awesome Icon
 import { FaCircle } from "react-icons/fa";
 
+export const metadata = {
+  title: 'Marlène DIAZ || À propos de moi',
+  description: "Vous retrouverez ici les informations me concernant. N'hésitez pas à télécharger mon CV pour en apprendre un peu plus!",
+}
 
 const AboutMe = () => {
   return (

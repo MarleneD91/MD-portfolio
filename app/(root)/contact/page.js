@@ -5,6 +5,11 @@ import Footer from '@/components/common/Footer/Footer'
 //Main component
 import ContactForm from '@/components/contact/ContactForm'
 
+export const metadata = {
+  title: 'Marlène DIAZ || Contactez-moi !',
+  description: "Vous avez des questions ? Vous désirez savoir si je peux vous aider à réaliser votre projet ? Je suis à votre écoute!",
+}
+
 const Contact = () => {
   return (
     <div className='flex flex-col h-screen justify-between'>

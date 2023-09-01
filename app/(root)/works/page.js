@@ -18,7 +18,10 @@ import WhatIUse from '@/components/works/WhatIUse'
 import { technoData } from '@/public/data/technoListData.js'
 import { toolData } from '@/public/data/toolListData.js'
 
-
+export const metadata = {
+  title: 'Marlène DIAZ || Mes réalisations',
+  description: "Quelles sont mes compétences ? Avec un aperçu des projets que j'ai réalisés, c'est encore mieux!",
+}
 
 const Works = () => {
 

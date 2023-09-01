@@ -31,13 +31,23 @@ const roboto = Roboto ({
 })
 
 export const metadata = {
-  title: 'Portfolio of Marlène Diaz, front web developer',
-  description: 'This portfolio shows the work of Marlène Diaz, frontend web developer.',
+  title: 'Marlène DIAZ || Frontend développeuse',
+  description: "Bienvenue! Je vous invite à découvrir mes compétences en développement web et les projets que j'ai réalisés. Contactez-moi!",
+  author: { name: 'DIAZ Marlène' },
+  keywords: ['Frontend', 'Développement web', 'React', 'Next.js'],
+  openGraph: {
+    title: "Marlène DIAZ || Frontend développeuse",
+    description: "Bienvenue! Je vous invite à découvrir mes compétences en développement web et les projets que j'ai réalisés. Contactez-moi!",
+    url: '',
+    siteName: 'Marlène D. || Développeuse web',
+    type: "website",
+    locale: "fr"
+  }
 }
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${sansita.variable} ${gentiumBookPlus.variable} ${roboto.variable}`}>
+    <html lang="fr" className={`${sansita.variable} ${gentiumBookPlus.variable} ${roboto.variable}`}>
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
