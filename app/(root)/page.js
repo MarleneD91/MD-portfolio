@@ -25,6 +25,7 @@ export default function Home() {
                             altLight={"Cactus in a pot illustration for the plant-themed portfolio, made by MD"} 
                             altDark={"Magnolia flower illustration for the plant-themed portfolio, made by MD"}
                             sizes="(max-width: 580px) 70vw"
+                            layout = "responsive"
                             className="h-[320px] w-auto mobiles:h-auto"
                             />
               <span className="absolute bottom-0 scale-0 rounded bg-purple-dark p-1 text-[10px] font-roboto text-white group-hover:scale-100">✨ Je réalise aussi des illustrations ✨</span>
