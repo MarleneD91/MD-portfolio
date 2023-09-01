@@ -47,7 +47,7 @@ const Carousel = () => {
           {works && works.map((work, index) => {
               if (index === currentSlide) {
                 return (
-                  <Image key={work.title} src={work.imageUrl} width={500} height={300} className="opacity-75 dark:opacity-100 dark:hover:opacity-80 hover:opacity-100 rounded-sm h-full w-full object-cover mobile:w-[300px] mobile-sm:w-[175px]" alt={`Screenshot of the project: ${work.title}`} />
+                  <Image key={work.title} src={work.imageUrl} width={500} height={300} className="opacity-75 dark:opacity-100 dark:hover:opacity-80 hover:opacity-100 rounded-sm h-full w-full object-cover mobile:w-[300px] mobile-sm:w-[175px]" alt={`Screenshot of the project: ${work.title}`} responsive/>
                 )
               }
             })}
