@@ -6,7 +6,7 @@ import White404 from '@/public/images/404-white-ivy.webp'
 
 import ThemeImg from '@/components/common/ThemeImg'
 
-export default function Custom404() {
+export default function NotFound() {
     return (
         <div className='flex flex-col h-screen justify-between'>
             <Header/>
