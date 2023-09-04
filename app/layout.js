@@ -38,7 +38,7 @@ export const metadata = {
   openGraph: {
     title: "Marlène DIAZ || Frontend développeuse",
     description: "Bienvenue! Je vous invite à découvrir mes compétences en développement web et les projets que j'ai réalisés. Contactez-moi!",
-    url: '',
+    url: 'marlene-diaz-dev.vercel.app',
     siteName: 'Marlène D. || Développeuse web',
     type: "website",
     locale: "fr"
