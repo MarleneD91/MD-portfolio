@@ -43,14 +43,13 @@ const Carousel = () => {
       <div className="flex flex-row">
         <FaChevronLeft onClick={handlePrevSlide} className=" text-5xl sm-devices:text-4xl mobile:text-3xl mobile-sm:text-2xl cursor-pointer text-gray-400 place-self-center z-20 ml-2 hover:text-gray-500 mobile-sm:ml-0" />
         <div className="h-[250px] overflow-hidden m-auto place-content-center sm-devices:h-[180px] mobile:h-[220px] mobile-sm:h-[200px]">
-          
           {works && works.map((work, index) => {
-              if (index === currentSlide) {
-                return (
-                  <Image key={work.title} src={work.imageUrl} width={500} height={300} className="opacity-75 dark:opacity-100 dark:hover:opacity-80 hover:opacity-100 rounded-sm h-full w-full object-cover mobile:w-[300px] mobile-sm:w-[175px]" alt={`Screenshot of the project: ${work.title}`} fill/>
-                )
-              }
-            })}
+            if (index === currentSlide) {
+              return (
+                <Image key={work.title} src={work.imageUrl} width={500} height={300} className="opacity-75 dark:opacity-100 dark:hover:opacity-80 hover:opacity-100 rounded-sm h-full w-full object-cover mobile:w-[300px] mobile-sm:w-[175px]" alt={`Screenshot of the project: ${work.title}`} />
+              )
+            }
+          })}
         </div>
         <FaChevronRight onClick={handleNextSlide} className=" text-5xl sm-devices:text-4xl mobile:text-3xl mobile-sm:text-2xl cursor-pointer text-gray-400 place-self-center z-20 mr-2 hover:text-gray-500 mobile-sm:mr-0" />
       </div>
