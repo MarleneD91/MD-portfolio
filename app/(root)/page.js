@@ -16,13 +16,15 @@ import Magnolia from '@/public/images/Magnolia.webp'
 
 export const metadata = {
   title: 'Marlène DIAZ || FrontEnd développeuse',
-  description: "Vous cherchez une développeuse web front avec un brin de créativité ? Ne cherchez plus, je vous écoute!",
+  description: "Vous cherchez une développeuse web front avec un brin de créativité ? N'hésitez pas à me contacter!",
 }
 
 export default function Home() {
   return (
     <>
       <Head>
+        <title> Marlène Diaz || Développeuse FrontEnd </title>
+        <meta name="description" content=" Vous cherchez une développeuse web front avec un brin de créativité ? N'hésitez pas à me contacter!"></meta>
         <meta name="google-site-verification" content="QJLvHDUn9e77IFuIaN60HBmwMIz9ov5lCq0fxPGAlaI" />
       </Head>
       <div className='flex flex-col h-screen justify-between'>
