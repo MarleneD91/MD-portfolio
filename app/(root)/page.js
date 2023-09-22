@@ -11,6 +11,11 @@ import Cactus from '@/public/images/Cactus.webp'
 import Magnolia from '@/public/images/Magnolia.webp'
 
 
+export const metadata = {
+  title: 'Marlène DIAZ || FrontEnd développeuse',
+  description: "Vous cherchez une développeuse web front avec un brin de créativité ? Ne cherchez plus, je vous écoute!",
+}
+
 export default function Home() {
   return (
     <div className='flex flex-col h-screen justify-between'>
