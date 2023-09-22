@@ -26,6 +26,20 @@ export default function Home() {
         <title> Marlène Diaz || Développeuse FrontEnd </title>
         <meta name="description" content=" Vous cherchez une développeuse web front avec un brin de créativité ? N'hésitez pas à me contacter!"></meta>
         <meta name="google-site-verification" content="QJLvHDUn9e77IFuIaN60HBmwMIz9ov5lCq0fxPGAlaI" />
+        <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{
+              __html: `
+                {
+                  "@context": "https://schema.org",
+                  "@type": "CreativeWork",
+                  "name": "Marlène Diaz",
+                  "url": "https://marlene-diaz-dev.vercel.app",
+                  "logo": "https://marlene-diaz-dev.vercel.app/favicon.ico"
+                }
+              `,
+            }}
+          />
       </Head>
       <div className='flex flex-col h-screen justify-between'>
         <Header/>
