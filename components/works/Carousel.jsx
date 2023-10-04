@@ -83,7 +83,7 @@ const Carousel = () => {
                     }
                   })}
                 </ul>
-                {work.githubLink ? <a href={work.githubLink}><FaGithub className="text-4xl" /></a> : <></>}
+                {work.githubLink ? <a href={work.githubLink} target="_blank"><FaGithub className="text-4xl" /></a> : <></>}
               </div> 
              </div>
           )
