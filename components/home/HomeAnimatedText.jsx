@@ -11,7 +11,7 @@ const HomeAnimatedText = () => {
             <h1 className='font-sansita font-extrabold text-6xl text-center p-6 tablet:text-5xl mobiles:text-4xl'>Bienvenue sur mon site</h1>
             <div className='text-center p-4 w-6/12 mobiles:w-5/6 tablet:w-2/3'>
               <p className='font-gentium text-lg'>
-              Je suis Marlène, <span className='font-bold'>développeuse web junior</span>. Je vous présente mon 
+              Je suis Marlène, <span className='font-bold'>développeuse web front-end</span>. Je vous présente mon 
               <span className='font-bold'> parcours</span>, mes <span className='font-bold'>réalisations</span>, 
               les <span className='font-bold'>technologies</span> avec lesquelles j’ai eu l'opportunité de 
               travailler jusqu’à présent. 
