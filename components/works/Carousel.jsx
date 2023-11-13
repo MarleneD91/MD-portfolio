@@ -7,7 +7,11 @@ import { useEffect, useState } from "react";
 //FA Icons
 import { FaChevronLeft, FaChevronRight, FaCircle, FaGithub } from 'react-icons/fa'
 
+//Loader
+import Loader from "./Loader";
+
 const Carousel = () => {
+  const [isLoading, setIsLoading] = useState(true)
 
   const [works, setWorks] = useState()
  
@@ -26,6 +30,7 @@ const Carousel = () => {
     })
     const resData = await res.json()
     setWorks(resData)
+    setIsLoading(false)
   }
 
   const handleNextSlide = () => {
@@ -42,7 +47,8 @@ const Carousel = () => {
     <div className="flex flex-col justify-center w-1/2 mb-8 mobiles:w-11/12 mobiles:mb-4">
       <div className="flex flex-row">
         <FaChevronLeft onClick={handlePrevSlide} className=" text-5xl sm-devices:text-4xl mobile:text-3xl mobile-sm:text-2xl cursor-pointer text-gray-400 place-self-center z-20 ml-2 hover:text-gray-500 mobile-sm:ml-0" />
-        <div className="h-[250px] overflow-hidden m-auto place-content-center sm-devices:h-[180px] mobile:h-[220px] mobile-sm:h-[200px]">
+        <div className="h-[250px] overflow-hidden m-auto sm-devices:h-[180px] mobile:h-[220px] mobile-sm:h-[200px]">
+          {isLoading ? <Loader /> :null}
           {works && works.map((work, index) => {
             if (index === currentSlide) {
               return (
