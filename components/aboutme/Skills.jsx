@@ -29,6 +29,7 @@ const Skills = () => {
                     <li>Langages de programmation</li>
                     <li>SEO</li>
                     <li>Versionning</li>
+                    <li>Méthode Agile</li>
                   </ul>
                 </Slide>
               </div>
