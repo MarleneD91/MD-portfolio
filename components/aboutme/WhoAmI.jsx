@@ -17,7 +17,7 @@ const WhoAmI = () => {
                Vous trouverez ici mon parcours et les compétences que j’ai pu acquérir.
                 N’hésitez pas à me contacter pour plus d’informations ! `]}
                 wrapper='span'
-                speed={50}
+                speed={75}
             />
         </div>
         <div className='relative group -z-10'>
