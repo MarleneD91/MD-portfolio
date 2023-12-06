@@ -22,6 +22,7 @@ const Skills = () => {
                 <h3 className='font-sansita font-semibold text-xl tracking-widest my-4 mobiles:my-2 mobile-sm:text-lg'>HARD SKILLS</h3>
                 <Slide>
                   <ul className='leading-8 font-gentium text-lg mobile:text-base mobile-sm:leading-5 mobile-sm:text-sm'>
+                    <li>Agilité</li>
                     <li>Base de données</li>
                     <li>Concepts de programmation</li>
                     <li>Création graphique et maquettage</li>
@@ -29,7 +30,6 @@ const Skills = () => {
                     <li>Langages de programmation</li>
                     <li>SEO</li>
                     <li>Versionning</li>
-                    <li>Méthode Agile</li>
                   </ul>
                 </Slide>
               </div>
